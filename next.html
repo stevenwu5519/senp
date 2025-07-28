@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>東南銘版有限公司 - 記帳管理系統</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #4facfe, #00f2fe);
+      color: #fff;
+    }
+    header {
+      padding: 1rem 2rem;
+      background: rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    }
+    header h1 {
+      font-size: 1.5rem;
+    }
+    .container {
+      max-width: 960px;
+      margin: 2rem auto;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(20px);
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+    .form-group {
+      margin-bottom: 1rem;
+    }
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    input, select, textarea, button {
+      width: 100%;
+      padding: 0.75rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+    button {
+      background: linear-gradient(to right, #667eea, #764ba2);
+      color: white;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+    table {
+      width: 100%;
+      margin-top: 2rem;
+      border-collapse: collapse;
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+    th, td {
+      padding: 1rem;
+      text-align: left;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
+    .income { color: #28a745; }
+    .expense { color: #ff6b6b; }
+    canvas {
+      margin-top: 2rem;
+    }
+    .export-btns, .theme-toggle {
+      margin-top: 1.5rem;
+      display: flex;
+      gap: 1rem;
+    }
+    .dark-mode {
+      background: linear-gradient(to right, #141e30, #243b55);
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>東南銘版 記帳管理系統</h1>
+    <button class="theme-toggle">🌙 切換主題</button>
+  </header>
+
+  <div class="container">
+    <h2>新增記帳紀錄</h2>
+    <form id="record-form">
+      <div class="form-group">
+        <label>金額</label>
+        <input type="number" id="amount" required>
+      </div>
+      <div class="form-group">
+        <label>類型</label>
+        <select id="type">
+          <option value="income">收入</option>
+          <option value="expense">支出</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>分類</label>
+        <select id="category"></select>
+      </div>
+      <div class="form-group">
+        <label>日期</label>
+        <input type="date" id="date" required>
+      </div>
+      <div class="form-group">
+        <label>備註</label>
+        <textarea id="note"></textarea>
+      </div>
+      <button type="submit">新增記錄</button>
+    </form>
+
+    <div class="export-btns">
+      <button id="export-csv">匯出CSV</button>
+      <button id="export-txt">匯出TXT</button>
+    </div>
+
+    <h2>記帳明細</h2>
+    <table id="record-table">
+      <thead>
+        <tr>
+          <th>日期</th>
+          <th>類型</th>
+          <th>分類</th>
+          <th>金額</th>
+          <th>備註</th>
+          <th>操作</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <h2>統計圖表</h2>
+    <canvas id="stats-chart" width="400" height="200"></canvas>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+  <script>
+    // 程式邏輯後續加入...
+  </script>
+</body>
+</html>
