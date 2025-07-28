@@ -3,63 +3,149 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>東南銘版有限公司</title>
-  <link rel="stylesheet" href="style.css">
+  <title>東南銘版有限公司 - 記帳管理系統</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #4facfe, #00f2fe);
+      color: #fff;
+    }
+    header {
+      padding: 1rem 2rem;
+      background: rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    }
+    header h1 {
+      font-size: 1.5rem;
+    }
+    .container {
+      max-width: 960px;
+      margin: 2rem auto;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(20px);
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+    .form-group {
+      margin-bottom: 1rem;
+    }
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    input, select, textarea, button {
+      width: 100%;
+      padding: 0.75rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+    button {
+      background: linear-gradient(to right, #667eea, #764ba2);
+      color: white;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+    table {
+      width: 100%;
+      margin-top: 2rem;
+      border-collapse: collapse;
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+    th, td {
+      padding: 1rem;
+      text-align: left;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
+    .income { color: #28a745; }
+    .expense { color: #ff6b6b; }
+    canvas {
+      margin-top: 2rem;
+    }
+    .export-btns, .theme-toggle {
+      margin-top: 1.5rem;
+      display: flex;
+      gap: 1rem;
+    }
+    .dark-mode {
+      background: linear-gradient(to right, #141e30, #243b55);
+      color: white;
+    }
+  </style>
 </head>
 <body>
-  <header class="hero">
-    <div class="container">
-      <img src="images/東南LOGO-去背.png" alt="東南銘版 LOGO" class="logo">
-      <h1>東南銘版有限公司</h1>
-      <p>我們相信，所有構想都值得被實現</p>
-      <a href="#about" class="btn">了解更多</a>
-    </div>
+  <header>
+    <h1>東南銘版 記帳管理系統</h1>
+    <button class="theme-toggle">🌙 切換主題</button>
   </header>
 
-  <section class="about" id="about">
-    <div class="container">
-      <h2>公司簡介</h2>
-      <p>東南銘版有限公司創立於1987年，致力於提供專業的金屬銘牌與工業標籤解決方案，擁有豐富的加工經驗與製程整合能力，為企業打造兼具品質與效率的專屬標示系統。</p>
-    </div>
-  </section>
-
-  <section class="services">
-    <div class="container">
-      <h2>多元製程服務</h2>
-      <div class="service-grid">
-        <div class="service-item">沖壓 Stamping</div>
-        <div class="service-item">網版印刷 Screen Print</div>
-        <div class="service-item">數位噴印 Digital Print</div>
-        <div class="service-item">雷射雕刻 Laser Engraving</div>
-        <div class="service-item">雷射切割 Laser Cutting</div>
+  <div class="container">
+    <h2>新增記帳紀錄</h2>
+    <form id="record-form">
+      <div class="form-group">
+        <label>金額</label>
+        <input type="number" id="amount" required>
       </div>
-    </div>
-  </section>
+      <div class="form-group">
+        <label>類型</label>
+        <select id="type">
+          <option value="income">收入</option>
+          <option value="expense">支出</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>分類</label>
+        <select id="category"></select>
+      </div>
+      <div class="form-group">
+        <label>日期</label>
+        <input type="date" id="date" required>
+      </div>
+      <div class="form-group">
+        <label>備註</label>
+        <textarea id="note"></textarea>
+      </div>
+      <button type="submit">新增記錄</button>
+    </form>
 
-  <section class="slogan">
-    <div class="container">
-      <blockquote>
-        <p>All idea you can make it</p>
-        <p class="sub">我們深信，任何構想都值得被實現。憑藉專業經驗與完善流程，我們為企業客戶打造可執行的解決方案，讓創意落地，讓願景成真。</p>
-      </blockquote>
+    <div class="export-btns">
+      <button id="export-csv">匯出CSV</button>
+      <button id="export-txt">匯出TXT</button>
     </div>
-  </section>
 
-  <section class="contact">
-    <div class="container">
-      <h2>聯絡我們</h2>
-      <p>東南銘版有限公司</p>
-      <p>地址：新北市三重區中正北路331巷10弄4號</p>
-      <p>電話：02-29820065</p>
-      <p>傳真：02-29718649</p>
-      <p>Email：es226761@ms9.hinet.net</p>
-    </div>
-  </section>
+    <h2>記帳明細</h2>
+    <table id="record-table">
+      <thead>
+        <tr>
+          <th>日期</th>
+          <th>類型</th>
+          <th>分類</th>
+          <th>金額</th>
+          <th>備註</th>
+          <th>操作</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
 
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 東南銘版有限公司 All Rights Reserved.</p>
-    </div>
-  </footer>
+    <h2>統計圖表</h2>
+    <canvas id="stats-chart" width="400" height="200"></canvas>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+  <script>
+    // 程式邏輯後續加入...
+  </script>
 </body>
 </html>
