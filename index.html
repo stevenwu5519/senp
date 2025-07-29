@@ -1,30 +1,28 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
-<head>
+<head><script type='text/javascript' src='https://bhgecbvzh4f82phn.canva-hosted-embed.com/WsSEMjaxUaxyHExAQ-jcT7X6Pc8gfcLK00m8P6HdvfDOiQAR_B-SxsL3IGdwnSwy9lfLx4xR5nAzBdZTEOItTg=='></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>東南銘版有限公司 - 專業金屬銘版製造</title>
     <style>
-        /* 全局重置 */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        /* CSS 變數 */
         :root {
-            --primary-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); /* 主要漸變色 (藍色漸變) */
-            --secondary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* 次要漸變色 (紫色漸變) */
-            --success-color: #28a745; /* 成功提示色 */
-            --error-color: #ff6b6b; /* 錯誤提示色 */
-            --text-primary: #ffffff; /* 主要文字顏色 */
-            --text-secondary: #cccccc; /* 次要文字顏色 */
-            --bg-primary: #1a1a1a; /* 主要背景色 */
-            --bg-secondary: #2d2d2d; /* 次要背景色 */
-            --glass-bg: rgba(0, 0, 0, 0.25); /* 玻璃效果背景 */
-            --glass-border: rgba(255, 255, 255, 0.1); /* 玻璃效果邊框 */
-            --shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5); /* 陰影效果 */
+            --primary-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --secondary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --success-color: #28a745;
+            --error-color: #ff6b6b;
+            --text-primary: #ffffff;
+            --text-secondary: #cccccc;
+            --bg-primary: #1a1a1a;
+            --bg-secondary: #2d2d2d;
+            --glass-bg: rgba(0, 0, 0, 0.25);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
         }
 
         body {
@@ -38,13 +36,11 @@
                 #3a3a3a 75%, 
                 #2a2a2a 100%
             );
-            background-size: 4px 100%; /* 細微垂直條紋背景 */
+            background-size: 4px 100%;
             position: relative;
             transition: all 0.3s ease;
-            min-height: 100vh; /* 確保 body 至少有視窗高度 */
         }
 
-        /* body::before 用於疊加細微紋理效果 */
         body::before {
             content: '';
             position: fixed;
@@ -60,8 +56,8 @@
                 rgba(60, 60, 60, 0.3) 100%
             );
             background-size: 2px 100%;
-            z-index: -1; /* 確保在內容下方 */
-            pointer-events: none; /* 不影響滑鼠事件 */
+            z-index: -1;
+            pointer-events: none;
         }
 
         .container {
@@ -70,16 +66,16 @@
             padding: 0 20px;
         }
 
-        /* --- 導航列 (Navigation) --- */
+        /* Navigation */
         .navbar {
             position: fixed;
             top: 0;
             width: 100%;
-            background: var(--glass-bg); /* 預設玻璃背景 */
+            background: var(--glass-bg);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--glass-border);
             z-index: 1000;
-            transition: background 0.3s ease; /* 只過渡背景色 */
+            transition: all 0.3s ease;
         }
 
         .nav-container {
@@ -110,7 +106,6 @@
             font-weight: 500;
             transition: all 0.3s ease;
             position: relative;
-            padding: 5px 0; /* 增加點擊範圍 */
         }
 
         .nav-link:hover {
@@ -122,7 +117,7 @@
             position: absolute;
             width: 0;
             height: 2px;
-            bottom: 0; /* 與文字底部對齊 (從 -5px 改為 0) */
+            bottom: -5px;
             left: 0;
             background: var(--primary-gradient);
             transition: width 0.3s ease;
@@ -132,6 +127,8 @@
             width: 100%;
         }
 
+
+
         .mobile-menu-toggle {
             display: none;
             background: none;
@@ -139,22 +136,19 @@
             font-size: 1.5rem;
             color: var(--text-primary);
             cursor: pointer;
-            padding: 5px; /* 增加點擊區域 */
         }
 
-        /* --- 英雄區塊 (Hero Section) --- */
+        /* Hero Section */
         .hero {
             height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: var(--primary-gradient); /* 改回主要漸變色，與導航列和卡片顏色協調 */
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
             position: relative;
             overflow: hidden;
-            padding-top: 80px; /* 避免內容被導航欄遮擋 */
         }
 
-        /* 英雄區塊的網格背景圖案 */
         .hero::before {
             content: '';
             position: absolute;
@@ -162,17 +156,20 @@
             left: 0;
             right: 0;
             bottom: 0;
-            /* 使用更柔和的背景紋理 */
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
-            z-index: 1; /* 在內容下方，但仍在 hero 元素內 */
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 2px,
+                rgba(255, 255, 255, 0.05) 2px,
+                rgba(255, 255, 255, 0.05) 4px
+            );
         }
 
         .hero-content {
             text-align: center;
-            color: white; /* 確保文字顏色與新背景協調 */
-            z-index: 2; /* 確保內容在背景上方 */
+            color: #e0e0e0;
+            z-index: 2;
             position: relative;
-            padding: 20px;
         }
 
         .hero-title {
@@ -190,29 +187,31 @@
         }
 
         .hero-features {
-            display: grid; /* 從 flex 改為 grid */
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* 更靈活的響應式網格 */
+            display: flex;
+            justify-content: center;
             gap: 2rem;
             margin-top: 3rem;
             animation: fadeInUp 1s ease 0.4s both;
-            /* 移除 flex-wrap, flex, min-width, max-width，由 grid-template-columns 處理 */
+            flex-wrap: wrap;
         }
 
         .feature-card {
-            background: var(--glass-bg); /* 改回 var(--glass-bg) 以保持一致的玻璃感 */
+            background: rgba(45, 45, 45, 0.8);
             backdrop-filter: blur(10px);
-            border: 1px solid var(--glass-border); /* 改回 var(--glass-border) */
+            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 20px;
             padding: 2rem;
             text-align: center;
             transition: all 0.3s ease;
-            /* 移除 flex: 1; min-width: 280px; max-width: 350px; */
+            flex: 1;
+            min-width: 280px;
+            max-width: 350px;
         }
 
         .feature-card:hover {
             transform: translateY(-10px);
-            box-shadow: var(--shadow); /* 改回 var(--shadow) */
-            background: rgba(0, 0, 0, 0.35); /* 輕微變暗以示互動 */
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.7);
+            background: rgba(55, 55, 55, 0.9);
         }
 
         .feature-icon {
@@ -220,13 +219,13 @@
             margin-bottom: 1rem;
         }
 
-        /* --- 區塊通用樣式 (Sections) --- */
+        /* Sections */
         .section {
             padding: 5rem 0;
             background: var(--bg-primary);
         }
 
-        .section:nth-child(even) { /* 偶數區塊使用不同背景色 */
+        .section:nth-child(even) {
             background: var(--bg-secondary);
         }
 
@@ -240,40 +239,13 @@
             background-clip: text;
         }
 
-        /* --- 關於我們區塊 (About Section) --- */
+        /* About Section */
         .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 3rem;
             align-items: center;
         }
-        
-        .about-content h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            color: #4facfe; /* 標題顏色 */
-        }
-
-        .about-content h4 {
-            font-size: 1.3rem;
-            margin-top: 1.5rem;
-            margin-bottom: 0.75rem;
-            color: var(--text-primary);
-        }
-
-        .about-content ul {
-            list-style: none; /* 移除預設列表點 */
-            padding-left: 0;
-            margin-top: 1rem;
-        }
-
-        .about-content ul li {
-            margin-bottom: 0.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
 
         .timeline {
             position: relative;
@@ -299,51 +271,21 @@
         .timeline-item::before {
             content: '';
             position: absolute;
-            left: -8px; /* 調整圓點位置 (從 -1.5rem 改為 -8px 以對齊 2px 的線條) */
+            left: -1.5rem;
             top: 0.5rem;
-            width: 16px; /* 調整圓點大小 (從 12px 改為 16px) */
-            height: 16px;
+            width: 12px;
+            height: 12px;
             border-radius: 50%;
             background: #4facfe;
-            border: 2px solid var(--bg-primary); /* 增加邊框以突出 */
-            z-index: 1;
         }
 
         .timeline-year {
             font-weight: bold;
-            color: #00f2fe; /* 時間點顏色 (從 #4facfe 改為 #00f2fe 讓層次更明顯) */
+            color: #4facfe;
             font-size: 1.1rem;
-            margin-bottom: 0.5rem;
         }
 
-        /* --- 服務項目區塊 (Services Section) --- */
-        .services-filter {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-bottom: 3rem;
-            flex-wrap: wrap;
-        }
-
-        .filter-btn {
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            border-radius: 25px;
-            padding: 0.5rem 1.5rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            color: var(--text-primary);
-            font-weight: 500;
-            white-space: nowrap; /* 防止按鈕文字換行 */
-        }
-
-        .filter-btn.active,
-        .filter-btn:hover {
-            background: var(--primary-gradient);
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-        }
+        /* Services Section */
 
         .services-grid {
             display: grid;
@@ -357,25 +299,7 @@
             border: 1px solid var(--glass-border);
             border-radius: 20px;
             padding: 2rem;
-            transition: all 0.5s ease; /* 增加過渡時間讓 hidden 效果更平滑 */
-            opacity: 1;
-            transform: scale(1);
-            /* 預設顯示，由 JS 控制隱藏/顯示 */
-            display: block; 
-        }
-
-        .service-card.hidden {
-            opacity: 0;
-            transform: scale(0.9); /* 調整縮放大小，效果更自然 */
-            max-height: 0; /* 隱藏時高度為0，不佔空間 */
-            overflow: hidden;
-            padding-top: 0;
-            padding-bottom: 0;
-            margin-top: 0;
-            margin-bottom: 0;
-            border: none; /* 隱藏邊框 */
-            visibility: hidden; /* 確保完全隱藏 */
-            /* 不要設置 display: none; 讓 transition 生效，在 transition 結束後再設置 */
+            transition: all 0.3s ease;
         }
 
         .service-card:hover {
@@ -394,17 +318,13 @@
             font-size: 1.5rem;
             color: white;
             margin-bottom: 1rem;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
-        /* --- 最新消息區塊 (News Section) --- */
+        /* News Section */
         .news-slider {
             position: relative;
             overflow: hidden;
             border-radius: 20px;
-            background: var(--bg-secondary); /* 為滑塊增加背景 */
-            padding: 1rem; /* 增加內邊距 */
-            box-shadow: var(--shadow);
         }
 
         .news-container {
@@ -413,38 +333,12 @@
         }
 
         .news-item {
-            min-width: 100%; /* 每個新聞項佔滿整個容器寬度 */
-            flex-shrink: 0; /* 防止縮小 */
+            min-width: 100%;
             background: var(--glass-bg);
             backdrop-filter: blur(10px);
             border: 1px solid var(--glass-border);
             padding: 2rem;
             border-radius: 20px;
-            text-align: center;
-        }
-        
-        .news-item h3 {
-            color: #00f2fe;
-            margin-bottom: 0.5rem;
-        }
-
-        .news-date {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-        }
-
-        .news-link {
-            display: inline-block;
-            margin-top: 1rem;
-            color: #4facfe;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s ease;
-        }
-
-        .news-link:hover {
-            color: #00f2fe;
         }
 
         .news-controls {
@@ -461,41 +355,27 @@
             background: var(--primary-gradient);
             border: none;
             color: white;
-            font-size: 1.2rem;
             cursor: pointer;
             transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         .news-btn:hover {
             transform: scale(1.1);
-            box-shadow: var(--shadow);
         }
 
-        /* --- 聯絡我們區塊 (Contact Section) --- */
+        /* Contact Section */
         .contact-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 3rem;
         }
 
-        .contact-form,
-        .contact-info {
+        .contact-form {
             background: var(--glass-bg);
             backdrop-filter: blur(10px);
             border: 1px solid var(--glass-border);
             border-radius: 20px;
             padding: 2rem;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-        }
-        
-        .contact-form h3,
-        .contact-info h3 {
-            color: #00f2fe;
-            margin-bottom: 1.5rem;
         }
 
         .form-group {
@@ -521,33 +401,17 @@
             transition: all 0.3s ease;
         }
 
-        .form-input::placeholder,
-        .form-textarea::placeholder {
-            color: var(--text-secondary);
-            opacity: 0.7;
-        }
-        
-        /* 表單驗證錯誤時的樣式 */
-        .form-input.is-invalid,
-        .form-textarea.is-invalid {
-            border-color: var(--error-color);
-            box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.3);
-        }
-
-
         .form-input:focus,
         .form-textarea:focus {
             outline: none;
             border-color: #4facfe;
-            box-shadow: 0 0 0 3px rgba(79, 172, 254, 0.2); /* 增加陰影強度 */
-            background-color: rgba(0, 0, 0, 0.35); /* 聚焦時背景稍微變深 */
+            box-shadow: 0 0 0 3px rgba(79, 172, 254, 0.1);
         }
 
         .form-error {
             color: var(--error-color);
             font-size: 0.875rem;
             margin-top: 0.25rem;
-            height: 18px; /* 保持錯誤訊息區塊高度，避免抖動 */
         }
 
         .submit-btn {
@@ -560,8 +424,6 @@
             cursor: pointer;
             transition: all 0.3s ease;
             width: 100%;
-            font-weight: bold;
-            letter-spacing: 1px;
         }
 
         .submit-btn:hover {
@@ -569,14 +431,18 @@
             box-shadow: var(--shadow);
         }
 
+        .contact-info {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 2rem;
+        }
+
         .contact-item {
             display: flex;
-            align-items: flex-start; /* 讓文字與圖標頂部對齊 (從 center 改為 flex-start) */
+            align-items: center;
             margin-bottom: 1.5rem;
-        }
-        
-        .contact-item:last-child {
-            margin-bottom: 0; /* 最後一個項目沒有下邊距 */
         }
 
         .contact-icon {
@@ -589,16 +455,7 @@
             justify-content: center;
             color: white;
             margin-right: 1rem;
-            flex-shrink: 0; /* 防止圖標縮小 */
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
-        
-        .contact-item strong {
-            display: block;
-            margin-bottom: 0.2rem;
-            color: #00f2fe; /* 聯絡資訊標題顏色 */
-        }
-
 
         .map-container {
             width: 100%;
@@ -606,68 +463,45 @@
             border-radius: 15px;
             overflow: hidden;
             margin-top: 2rem;
-            border: 1px solid var(--glass-border);
-            box-shadow: var(--shadow);
         }
 
-        /* --- 彈出視窗 (Modal) --- */
+        /* Modal */
         .modal {
-            /* 從 display: none; 改為 opacity/visibility 搭配 class */
+            display: none;
             position: fixed;
             z-index: 2000;
             left: 0;
             top: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.6); /* 更深的背景色 (從 0.5 改為 0.6) */
-            backdrop-filter: blur(8px); /* 更強的模糊效果 (從 5px 改為 8px) */
-            display: flex; /* 使用 flexbox 居中內容 */
-            align-items: center;
-            justify-content: center;
-            /* 隱藏時的狀態 */
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease, visibility 0.3s ease;
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
         }
-        
-        /* 彈出視窗顯示時的狀態 */
-        .modal.show {
-            opacity: 1;
-            visibility: visible;
-        }
-
 
         .modal-content {
             background: var(--bg-primary);
-            /* 移除 margin: 15% auto; 改為由 flexbox 居中 */
-            padding: 2.5rem; /* 增加內邊距 (從 2rem 改為 2.5rem) */
+            margin: 15% auto;
+            padding: 2rem;
             border-radius: 20px;
             width: 90%;
             max-width: 500px;
             text-align: center;
-            animation: modalSlideIn 0.4s ease-out; /* 調整動畫速度 (從 0.3s 改為 0.4s) */
-            box-shadow: var(--shadow);
-            position: relative;
+            animation: modalSlideIn 0.3s ease;
         }
 
         .modal-icon {
-            font-size: 3.5rem; /* 調整圖標大小 (從 3rem 改為 3.5rem) */
+            font-size: 3rem;
             color: var(--success-color);
             margin-bottom: 1rem;
-            animation: bounceIn 0.8s ease; /* 增加彈跳動畫 */
         }
 
         .close {
             color: var(--text-secondary);
-            /* 移除 float: right; 改為絕對定位 */
-            position: absolute; 
-            top: 15px;
-            right: 20px;
-            font-size: 32px; /* 調整大小 (從 28px 改為 32px) */
+            float: right;
+            font-size: 28px;
             font-weight: bold;
             cursor: pointer;
             line-height: 1;
-            transition: color 0.3s ease;
         }
 
         .close:hover {
@@ -689,32 +523,18 @@
         @keyframes modalSlideIn {
             from {
                 opacity: 0;
-                transform: translateY(-80px); /* 讓彈窗從更上方滑入 (從 -50px 改為 -80px) */
+                transform: translateY(-50px);
             }
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
-        /* 新增彈跳動畫 */
-        @keyframes bounceIn {
-            0% {
-                transform: scale(0.1);
-                opacity: 0;
-            }
-            60% {
-                transform: scale(1.1);
-                opacity: 1;
-            }
-            100% {
-                transform: scale(1);
-            }
-        }
 
         .fade-in {
             opacity: 0;
             transform: translateY(30px);
-            transition: all 0.7s ease-out; /* 調整過渡速度 (從 0.6s 改為 0.7s) */
+            transition: all 0.6s ease;
         }
 
         .fade-in.visible {
@@ -739,7 +559,6 @@
                 flex-direction: column;
                 padding: 1rem;
                 border-top: 1px solid var(--glass-border);
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* 為手機菜單增加陰影 */
             }
 
             .nav-menu.active {
@@ -750,9 +569,8 @@
                 font-size: 2.5rem;
             }
 
-            /* .hero-features 在大尺寸下是 grid，小尺寸依然是 grid，只需調整 minmax 值 */
             .hero-features {
-                grid-template-columns: 1fr; /* 小螢幕下每行一個 */
+                grid-template-columns: 1fr;
             }
 
             .about-content,
@@ -763,28 +581,8 @@
             .services-grid {
                 grid-template-columns: 1fr;
             }
-            
-            /* 新增服務篩選按鈕的響應式樣式 */
-            .services-filter {
-                justify-content: flex-start;
-                overflow-x: auto; /* 允許橫向滾動 */
-                padding-bottom: 1rem;
-                -webkit-overflow-scrolling: touch; /* iOS 流暢滾動 */
-            }
-            .filter-btn {
-                white-space: nowrap; /* 防止按鈕文字換行 */
-            }
 
-            /* 新增聯絡資訊項目的響應式樣式 */
-            .contact-item {
-                flex-direction: column; /* 小螢幕下圖標和文字垂直排列 */
-                align-items: center;
-                text-align: center;
-            }
-            .contact-icon {
-                margin-right: 0;
-                margin-bottom: 0.5rem;
-            }
+
         }
 
         @media (max-width: 480px) {
@@ -794,10 +592,6 @@
 
             .hero-title {
                 font-size: 2rem;
-            }
-
-            .hero-subtitle {
-                font-size: 1rem; /* 新增小螢幕副標題字體大小調整 */
             }
 
             .section-title {
@@ -810,56 +604,47 @@
             .contact-info {
                 padding: 1.5rem;
             }
-
-            .modal-content {
-                padding: 1.5rem;
-            }
-
-            .modal-icon {
-                font-size: 2.5rem;
-            }
-
-            .close {
-                font-size: 24px;
-            }
         }
     </style>
 </head>
 <body>
+    <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
             <div class="nav-container">
                 <div class="logo">東南銘版</div>
-                <ul class="nav-menu" id="navMenu" role="menubar"> <li><a href="#home" class="nav-link" role="menuitem">首頁</a></li>
-                    <li><a href="#about" class="nav-link" role="menuitem">關於我們</a></li>
-                    <li><a href="#services" class="nav-link" role="menuitem">服務項目</a></li>
-                    <li><a href="#news" class="nav-link" role="menuitem">最新消息</a></li>
-                    <li><a href="#contact" class="nav-link" role="menuitem">聯絡我們</a></li>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#home" class="nav-link">首頁</a></li>
+                    <li><a href="#about" class="nav-link">關於我們</a></li>
+                    <li><a href="#services" class="nav-link">服務項目</a></li>
+                    <li><a href="#news" class="nav-link">最新消息</a></li>
+                    <li><a href="#contact" class="nav-link">聯絡我們</a></li>
                 </ul>
 
-                <button class="mobile-menu-toggle" id="mobileToggle" aria-label="Toggle mobile menu" aria-expanded="false">☰</button>
+                <button class="mobile-menu-toggle" id="mobileToggle">☰</button>
             </div>
         </div>
     </nav>
 
-    <section id="home" class="hero" aria-labelledby="hero-title">
+    <!-- Hero Section -->
+    <section id="home" class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1 class="hero-title" id="hero-title">東南銘版有限公司</h1>
+                <h1 class="hero-title">東南銘版有限公司</h1>
                 <p class="hero-subtitle">專業金屬銘版製造 · 品質卓越 · 服務至上</p>
                 <div class="hero-features">
                     <div class="feature-card">
-                        <div class="feature-icon" aria-hidden="true">🏭</div>
+                        <div class="feature-icon">🏭</div>
                         <h3>專業製造</h3>
                         <p>30年專業經驗，精密設備製造高品質銘版產品</p>
                     </div>
                     <div class="feature-card">
-                        <div class="feature-icon" aria-hidden="true">⚙️</div>
+                        <div class="feature-icon">⚙️</div>
                         <h3>多元工法</h3>
                         <p>雷雕、蝕刻、UV印刷等多種工藝技術</p>
                     </div>
                     <div class="feature-card">
-                        <div class="feature-icon" aria-hidden="true">✅</div>
+                        <div class="feature-icon">✅</div>
                         <h3>品質控管</h3>
                         <p>嚴格品質管控，確保每件產品符合標準</p>
                     </div>
@@ -868,9 +653,10 @@
         </div>
     </section>
 
-    <section id="about" class="section" aria-labelledby="about-title">
+    <!-- About Section -->
+    <section id="about" class="section">
         <div class="container">
-            <h2 class="section-title fade-in" id="about-title">關於我們</h2>
+            <h2 class="section-title fade-in">關於我們</h2>
             <div class="about-content">
                 <div class="fade-in">
                     <h3>公司簡介</h3>
@@ -921,45 +707,49 @@
         </div>
     </section>
 
-    <section id="services" class="section" aria-labelledby="services-title">
+    <!-- Services Section -->
+    <section id="services" class="section">
         <div class="container">
-            <h2 class="section-title fade-in" id="services-title">服務項目</h2>
-            <div class="services-filter fade-in">
-                <button class="filter-btn active" data-filter="all">全部</button>
-                <button class="filter-btn" data-filter="metal">金屬材質</button>
-                <button class="filter-btn" data-filter="plastic">塑膠材質</button> <button class="filter-btn" data-filter="special">特殊材質</button> <button class="filter-btn" data-filter="processing">加工服務</button> </div>
+            <h2 class="section-title fade-in">服務項目</h2>
+
             <div class="services-grid fade-in">
                 <div class="service-card" data-category="metal">
-                    <div class="service-icon" aria-hidden="true">🏷️</div>
+                    <div class="service-icon">🏷️</div>
                     <h3>金屬銘版</h3>
                     <p>不鏽鋼、鋁合金等金屬材質銘版製造，耐用性佳</p>
                 </div>
                 <div class="service-card" data-category="metal">
-                    <div class="service-icon" aria-hidden="true">🥉</div>
+                    <div class="service-icon">🥉</div>
                     <h3>銅板加工</h3>
                     <p>專業銅板蝕刻與加工技術，精緻細膩的表面處理</p>
                 </div>
-                <div class="service-card" data-category="plastic"> <div class="service-icon" aria-hidden="true">💻</div>
+                <div class="service-card" data-category="laser">
+                    <div class="service-icon">💻</div>
                     <h3>PC材質加工</h3>
                     <p>聚碳酸酯材質加工，透明度高、耐衝擊性強</p>
                 </div>
-                <div class="service-card" data-category="plastic"> <div class="service-icon" aria-hidden="true">🔧</div>
+                <div class="service-card" data-category="laser">
+                    <div class="service-icon">🔧</div>
                     <h3>PVC材質加工</h3>
                     <p>聚氯乙烯材質加工，成本效益高、應用廣泛</p>
                 </div>
-                <div class="service-card" data-category="special"> <div class="service-icon" aria-hidden="true">✨</div>
+                <div class="service-card" data-category="uv">
+                    <div class="service-icon">✨</div>
                     <h3>MAYLAR材質</h3>
                     <p>聚酯薄膜材質，具優異的電氣絕緣性能</p>
                 </div>
-                <div class="service-card" data-category="special"> <div class="service-icon" aria-hidden="true">🎨</div>
+                <div class="service-card" data-category="uv">
+                    <div class="service-icon">🎨</div>
                     <h3>特殊印刷</h3>
                     <p>各式特殊印刷技術，滿足不同材質與效果需求</p>
                 </div>
-                <div class="service-card" data-category="processing"> <div class="service-icon" aria-hidden="true">⚙️</div>
+                <div class="service-card" data-category="custom">
+                    <div class="service-icon">⚙️</div>
                     <h3>雷雕加工</h3>
                     <p>精密雷射雕刻技術，可製作細緻圖案與文字</p>
                 </div>
-                <div class="service-card" data-category="processing"> <div class="service-icon" aria-hidden="true">🏭</div>
+                <div class="service-card" data-category="custom">
+                    <div class="service-icon">🏭</div>
                     <h3>加工承製</h3>
                     <p>提供各式材質的專業加工承製服務</p>
                 </div>
@@ -967,64 +757,66 @@
         </div>
     </section>
 
-    <section id="news" class="section" aria-labelledby="news-title">
+    <!-- News Section -->
+    <section id="news" class="section">
         <div class="container">
-            <h2 class="section-title fade-in" id="news-title">最新消息</h2>
+            <h2 class="section-title fade-in">最新消息</h2>
             <div class="news-slider fade-in">
                 <div class="news-container" id="newsContainer">
                     <div class="news-item">
                         <h3>🎉 參展台北國際工具機展</h3>
                         <p class="news-date">2024年3月15日</p>
                         <p>東南銘版將於3月20-25日參加台北國際工具機展，展示最新的雷雕技術與產品。歡迎蒞臨攤位參觀，現場將有專業人員為您介紹我們的服務。</p>
-                        <a href="#" class="news-link" aria-label="閱讀更多關於參展台北國際工具機展的新聞">閱讀更多 →</a>
+                        <a href="#" class="news-link">閱讀更多 →</a>
                     </div>
                     <div class="news-item">
                         <h3>🚀 新增UV印刷產線</h3>
                         <p class="news-date">2024年2月28日</p>
                         <p>為了提供更多元的服務，我們新增了UV印刷產線，可提供高品質的彩色印刷服務。無論是企業LOGO或複雜圖案，都能完美呈現。</p>
-                        <a href="#" class="news-link" aria-label="閱讀更多關於新增UV印刷產線的新聞">閱讀更多 →</a>
+                        <a href="#" class="news-link">閱讀更多 →</a>
                     </div>
                     <div class="news-item">
                         <h3>🏆 榮獲品質認證</h3>
                         <p class="news-date">2024年1月10日</p>
                         <p>東南銘版通過ISO 9001品質管理系統認證，這是對我們品質管控能力的肯定。我們將持續提升服務品質，為客戶提供更優質的產品。</p>
-                        <a href="#" class="news-link" aria-label="閱讀更多關於榮獲品質認證的新聞">閱讀更多 →</a>
+                        <a href="#" class="news-link">閱讀更多 →</a>
                     </div>
                 </div>
                 <div class="news-controls">
-                    <button class="news-btn" id="prevNews" aria-label="上一則新聞">‹</button>
-                    <button class="news-btn" id="nextNews" aria-label="下一則新聞">›</button>
+                    <button class="news-btn" id="prevNews">‹</button>
+                    <button class="news-btn" id="nextNews">›</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="section" aria-labelledby="contact-title">
+    <!-- Contact Section -->
+    <section id="contact" class="section">
         <div class="container">
-            <h2 class="section-title fade-in" id="contact-title">聯絡我們</h2>
+            <h2 class="section-title fade-in">聯絡我們</h2>
             <div class="contact-content">
                 <div class="contact-form fade-in">
                     <h3>聯絡表單</h3>
                     <form id="contactForm">
                         <div class="form-group">
-                            <label for="name" class="form-label">姓名 *</label>
-                            <input type="text" class="form-input" id="name" name="name" placeholder="請輸入您的姓名" required aria-required="true">
-                            <div class="form-error" id="nameError" aria-live="polite"></div>
+                            <label class="form-label">姓名 *</label>
+                            <input type="text" class="form-input" id="name" required>
+                            <div class="form-error" id="nameError"></div>
                         </div>
                         <div class="form-group">
-                            <label for="phone" class="form-label">電話 *</label>
-                            <input type="tel" class="form-input" id="phone" name="phone" placeholder="請輸入您的電話號碼" required aria-required="true">
-                            <div class="form-error" id="phoneError" aria-live="polite"></div>
+                            <label class="form-label">電話 *</label>
+                            <input type="tel" class="form-input" id="phone" required>
+                            <div class="form-error" id="phoneError"></div>
                         </div>
                         <div class="form-group">
-                            <label for="email" class="form-label">Email *</label>
-                            <input type="email" class="form-input" id="email" name="email" placeholder="請輸入您的Email地址" required aria-required="true">
-                            <div class="form-error" id="emailError" aria-live="polite"></div>
+                            <label class="form-label">Email *</label>
+                            <input type="email" class="form-input" id="email" required>
+                            <div class="form-error" id="emailError"></div>
                         </div>
                         <div class="form-group">
-                            <label for="message" class="form-label">需求內容 *</label>
-                            <textarea class="form-textarea" id="message" name="message" rows="5" placeholder="請描述您的需求內容" required aria-required="true"></textarea>
-                            <div class="form-error" id="messageError" aria-live="polite"></div>
+                            <label class="form-label">需求內容 *</label>
+                            <textarea class="form-textarea" id="message" rows="5" required></textarea>
+                            <div class="form-error" id="messageError"></div>
                         </div>
                         <button type="submit" class="submit-btn">送出詢問</button>
                     </form>
@@ -1032,7 +824,7 @@
                 <div class="contact-info fade-in">
                     <h3>聯絡資訊</h3>
                     <div class="contact-item">
-                        <div class="contact-icon" aria-hidden="true">📍</div>
+                        <div class="contact-icon">📍</div>
                         <div>
                             <strong>地址</strong><br>
                             241 新北市三重區中正北路331巷10弄4號<br>
@@ -1040,28 +832,28 @@
                         </div>
                     </div>
                     <div class="contact-item">
-                        <div class="contact-icon" aria-hidden="true">📞</div>
+                        <div class="contact-icon">📞</div>
                         <div>
                             <strong>電話</strong><br>
                             886-2-2982-0065
                         </div>
                     </div>
                     <div class="contact-item">
-                        <div class="contact-icon" aria-hidden="true">📠</div>
+                        <div class="contact-icon">📠</div>
                         <div>
                             <strong>傳真</strong><br>
                             886-2-2971-8649
                         </div>
                     </div>
                     <div class="contact-item">
-                        <div class="contact-icon" aria-hidden="true">🌐</div>
+                        <div class="contact-icon">🌐</div>
                         <div>
                             <strong>網址</strong><br>
-                            <a href="http://www.southeast99.com.tw/" target="_blank" rel="noopener noreferrer">www.southeast99.com.tw</a>
+                            <a href="http://www.southeast99.com.tw/" target="_blank" style="color: #4facfe;">www.southeast99.com.tw</a>
                         </div>
                     </div>
                     <div class="contact-item">
-                        <div class="contact-icon" aria-hidden="true">🕒</div>
+                        <div class="contact-icon">🕒</div>
                         <div>
                             <strong>營業時間</strong><br>
                             週一至週五 08:00-17:00
@@ -1069,14 +861,13 @@
                     </div>
                     <div class="map-container">
                         <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.331206778401!2d121.49397627581566!3d25.0601334777599!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a8c176ec5d33%3A0xfee61682b71b0421!2zMjQx5paw5YyX5biC5LiJ6YeN5Y2A5Lit5q2j5YyX6LevMzMx5be3MTDlvIQ06Jmf!5e0!3m2!1szh-TW!2stw!4v1717550000000!5m2!1szh-TW!2stw"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d903.469778379417!2d121.. !3d25.. !2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a8c176ec5d33%3A0xfee61682b71b0421!2zMjQx5paw5YyX5biC5LiJ6YeN5Y2A5Lit5q2j5YyX6LevMzMx5be3MTDlvIQ06Jmf!5e0!3m2!1szh-TW!2stw!4v. !5m2!1szh-TW!2stw"
                             width="100%" 
                             height="100%" 
                             style="border:0;" 
                             allowfullscreen="" 
                             loading="lazy" 
-                            referrerpolicy="no-referrer-when-downgrade"
-                            title="東南銘版有限公司地圖位置">
+                            referrerpolicy="no-referrer-when-downgrade">
                         </iframe>
                     </div>
                 </div>
@@ -1084,99 +875,52 @@
         </div>
     </section>
 
-    <div id="successModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalDescription">
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
         <div class="modal-content">
-            <span class="close" aria-label="關閉彈窗">×</span>
-            <div class="modal-icon" aria-hidden="true">✅</div>
-            <h3 id="modalTitle">訊息發送成功！</h3>
-            <p id="modalDescription">感謝您的詢問，我們將盡快與您聯繫。</p>
+            <span class="close">&times;</span>
+            <div class="modal-icon">✅</div>
+            <h3>訊息發送成功！</h3>
+            <p>感謝您的詢問，我們將盡快與您聯繫。</p>
         </div>
     </div>
 
-    <footer class="section" style="padding: 2rem 0; background: var(--bg-primary); text-align: center; color: var(--text-secondary);">
-        <div class="container">
-            <p>&copy; 2025 東南銘版有限公司. All Rights Reserved.</p>
-        </div>
-    </footer>
-
     <script>
-        // 抓取 DOM 元素
+        const body = document.body;
+
+        // Mobile Menu Toggle
         const mobileToggle = document.getElementById('mobileToggle');
         const navMenu = document.getElementById('navMenu');
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        const serviceCards = document.querySelectorAll('.service-card');
-        const newsContainer = document.getElementById('newsContainer');
-        const prevBtn = document.getElementById('prevNews');
-        const nextBtn = document.getElementById('nextNews');
-        const contactForm = document.getElementById('contactForm');
-        const successModal = document.getElementById('successModal');
-        const closeModal = successModal.querySelector('.close');
 
-        // --- 行動版選單切換 ---
         mobileToggle.addEventListener('click', () => {
             navMenu.classList.toggle('active');
-            // 確保每次點擊時，aria-expanded 狀態正確
-            const isExpanded = mobileToggle.getAttribute('aria-expanded') === 'true' || false;
-            mobileToggle.setAttribute('aria-expanded', !isExpanded);
         });
 
-        // --- 平滑捲動與行動版選單關閉 ---
+        // Smooth Scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                const targetId = this.getAttribute('href');
-                const target = document.querySelector(targetId);
-                
+                const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    // 計算滾動位置，考慮固定導航欄的高度
-                    const navbarHeight = document.querySelector('.navbar').offsetHeight;
-                    const offsetTop = target.offsetTop - navbarHeight;
-
-                    window.scrollTo({
-                        top: offsetTop > 0 ? offsetTop : 0, // 避免滾動到負值
-                        behavior: 'smooth'
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
                     });
-
-                    // 點擊連結後關閉行動版選單
-                    if (navMenu.classList.contains('active')) {
-                        navMenu.classList.remove('active');
-                        mobileToggle.setAttribute('aria-expanded', 'false');
-                    }
+                    navMenu.classList.remove('active');
                 }
             });
         });
 
-        // --- 服務項目篩選功能 ---
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                // 移除所有按鈕的 active 類別
-                filterBtns.forEach(b => b.classList.remove('active'));
-                // 為當前點擊的按鈕添加 active 類別
-                btn.classList.add('active');
 
-                const filter = btn.getAttribute('data-filter');
 
-                serviceCards.forEach(card => {
-                    const cardCategory = card.getAttribute('data-category');
-                    // 如果是 'all' 或類別匹配，則顯示卡片，否則隱藏
-                    if (filter === 'all' || cardCategory === filter) {
-                        card.classList.remove('hidden');
-                        card.style.display = 'block'; // 確保顯示
-                    } else {
-                        card.classList.add('hidden');
-                        card.style.display = 'none'; // 完全隱藏以不佔空間
-                    }
-                });
-            });
-        });
-
-        // --- 最新消息輪播 (Slider) ---
+        // News Slider
+        const newsContainer = document.getElementById('newsContainer');
+        const prevBtn = document.getElementById('prevNews');
+        const nextBtn = document.getElementById('nextNews');
         let currentSlide = 0;
-        const newsItems = document.querySelectorAll('.news-item');
-        const totalSlides = newsItems.length;
+        const totalSlides = document.querySelectorAll('.news-item').length;
 
         function updateSlider() {
-            // 計算translateX的百分比，讓每個新聞項佔據100%寬度
             const translateX = -currentSlide * 100;
             newsContainer.style.transform = `translateX(${translateX}%)`;
         }
@@ -1187,53 +931,42 @@
         });
 
         prevBtn.addEventListener('click', () => {
-            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides; // 確保循環到最後一張
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
             updateSlider();
         });
 
-        // 自動輪播
-        let autoSlideInterval = setInterval(() => {
+        // Auto-slide news
+        setInterval(() => {
             currentSlide = (currentSlide + 1) % totalSlides;
             updateSlider();
-        }, 5000); // 每5秒自動切換
+        }, 5000);
 
-        // 鼠標懸停時停止自動輪播，移開時恢復
-        newsContainer.parentElement.addEventListener('mouseenter', () => {
-            clearInterval(autoSlideInterval);
-        });
-        newsContainer.parentElement.addEventListener('mouseleave', () => {
-            autoSlideInterval = setInterval(() => {
-                currentSlide = (currentSlide + 1) % totalSlides;
-                updateSlider();
-            }, 5000);
-        });
+        // Form Validation and Submission
+        const contactForm = document.getElementById('contactForm');
+        const modal = document.getElementById('successModal');
+        const closeModal = document.querySelector('.close');
 
-
-        // --- 表單驗證與提交 ---
-        function validateField(fieldElement, errorElement, message) {
-            if (!fieldElement.value.trim()) {
+        function validateField(field, errorElement, message) {
+            if (!field.value.trim()) {
                 errorElement.textContent = message;
-                fieldElement.classList.add('is-invalid'); // 添加錯誤樣式
                 return false;
             }
             errorElement.textContent = '';
-            fieldElement.classList.remove('is-invalid');
             return true;
         }
 
         function validateEmail(email) {
             const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            return re.test(String(email).toLowerCase());
+            return re.test(email);
         }
 
         function validatePhone(phone) {
-            // 允許數字、-、()、+、空格，且至少8個有效數字
             const re = /^[\d\-\(\)\+\s]+$/;
             return re.test(phone) && phone.replace(/\D/g, '').length >= 8;
         }
 
         contactForm.addEventListener('submit', (e) => {
-            e.preventDefault(); // 阻止表單預設提交行為
+            e.preventDefault();
 
             const name = document.getElementById('name');
             const phone = document.getElementById('phone');
@@ -1247,133 +980,90 @@
 
             let isValid = true;
 
-            // 驗證姓名
+            // Validate name
             if (!validateField(name, nameError, '請輸入姓名')) {
                 isValid = false;
             }
 
-            // 驗證電話
+            // Validate phone
             if (!phone.value.trim()) {
                 phoneError.textContent = '請輸入電話號碼';
-                phone.classList.add('is-invalid');
                 isValid = false;
             } else if (!validatePhone(phone.value)) {
-                phoneError.textContent = '請輸入有效的電話號碼 (至少8碼數字)';
-                phone.classList.add('is-invalid');
+                phoneError.textContent = '請輸入有效的電話號碼';
                 isValid = false;
             } else {
                 phoneError.textContent = '';
-                phone.classList.remove('is-invalid');
             }
 
-            // 驗證 Email
+            // Validate email
             if (!email.value.trim()) {
                 emailError.textContent = '請輸入Email';
-                email.classList.add('is-invalid');
                 isValid = false;
             } else if (!validateEmail(email.value)) {
                 emailError.textContent = '請輸入有效的Email格式';
-                email.classList.add('is-invalid');
                 isValid = false;
             } else {
                 emailError.textContent = '';
-                email.classList.remove('is-invalid');
             }
 
-            // 驗證需求內容
+            // Validate message
             if (!validateField(message, messageError, '請輸入需求內容')) {
                 isValid = false;
             }
 
             if (isValid) {
-                // 如果所有驗證都通過，顯示成功彈窗
-                successModal.classList.add('show'); // 添加 show 類別來顯示彈窗
+                // Show success modal
+                modal.style.display = 'block';
                 
-                // 重置表單
+                // Reset form
                 contactForm.reset();
-                // 清除所有錯誤提示
-                document.querySelectorAll('.form-error').forEach(err => err.textContent = '');
-                document.querySelectorAll('.form-input, .form-textarea').forEach(input => input.classList.remove('is-invalid'));
                 
-                // 3 秒後自動關閉彈窗
+                // Auto close modal after 3 seconds
                 setTimeout(() => {
-                    successModal.classList.remove('show');
+                    modal.style.display = 'none';
                 }, 3000);
-
-                // ** 重要提醒：這只是前端驗證與提示 **
-                // ** 實際的表單數據需要發送到後端進行處理（例如發送 Email 或存入資料庫） **
-                // ** 您可以在此處添加 Fetch API 或 XMLHttpRequest 來發送數據到您的後端服務 **
-                // console.log('表單數據:', {
-                //     name: name.value,
-                //     phone: phone.value,
-                //     email: email.value,
-                //     message: message.value
-                // });
-                // fetch('/your-backend-api-endpoint', {
-                //     method: 'POST',
-                //     headers: {
-                //         'Content-Type': 'application/json',
-                //     },
-                //     body: JSON.stringify({
-                //         name: name.value,
-                //         phone: phone.value,
-                //         email: email.value,
-                //         message: message.value
-                //     }),
-                // })
-                // .then(response => response.json())
-                // .then(data => {
-                //     console.log('Success:', data);
-                //     // 成功後顯示彈窗
-                //     successModal.classList.add('show');
-                // })
-                // .catch((error) => {
-                //     console.error('Error:', error);
-                //     // 錯誤處理，可能顯示錯誤彈窗
-                // });
             }
         });
 
-        // 點擊關閉按鈕或彈窗外部關閉彈窗
+        // Close modal
         closeModal.addEventListener('click', () => {
-            successModal.classList.remove('show');
+            modal.style.display = 'none';
         });
 
         window.addEventListener('click', (e) => {
-            if (e.target === successModal) {
-                successModal.classList.remove('show');
+            if (e.target === modal) {
+                modal.style.display = 'none';
             }
         });
 
-        // --- 滾動時內容淡入動畫 ---
+        // Scroll Animation
         const observerOptions = {
-            threshold: 0.1, // 元素可見度達到 10% 時觸發
-            rootMargin: '0px 0px -50px 0px' // 底部距離視口 50px 時也觸發
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
         };
 
-        const observer = new IntersectionObserver((entries, observer) => {
+        const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
-                    observer.unobserve(entry.target); // 一旦可見，就停止觀察
                 }
             });
         }, observerOptions);
 
-        // 觀察所有帶有 'fade-in' 類別的元素
         document.querySelectorAll('.fade-in').forEach(el => {
             observer.observe(el);
         });
 
-        // --- 導航欄滾動效果 ---
+        // Navbar scroll effect
         window.addEventListener('scroll', () => {
             const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 80) { // 當捲動超過 80px 時
-                navbar.style.background = 'rgba(26, 26, 26, 0.95)'; // 更深的背景色
+            if (window.scrollY > 100) {
+                navbar.style.background = 'rgba(26, 26, 26, 0.95)';
             } else {
-                navbar.style.background = 'var(--glass-bg)'; // 恢復透明玻璃效果
+                navbar.style.background = 'var(--glass-bg)';
             }
         });
     </script>
-</body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9669a88ce5c7a9d1',t:'MTc1Mzc2MTA5Mi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
