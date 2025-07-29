@@ -1,63 +1,70 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
-<head><script type='text/javascript' src='https://bhgecbvzh4f82phn.canva-hosted-embed.com/WsSEMjaxUaxyHExAQ-jcT7X6Pc8gfcLK00m8P6HdvfDOiQAR_B-SxsL3IGdwnSwy9lfLx4xR5nAzBdZTEOItTg=='></script>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="東南銘版有限公司 - 專業金屬銘版製造，擁有35年經驗，提供雷雕、蝕刻、UV印刷等多種工藝服務">
+    <meta name="keywords" content="銘版,金屬銘版,雷雕,蝕刻,UV印刷,PC,PVC,MAYLAR">
     <title>東南銘版有限公司 - 專業金屬銘版製造</title>
+    
+    <!-- 預載入重要資源 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
     <style>
+        :root {
+            --primary-color: #4facfe;
+            --primary-dark: #2691d9;
+            --secondary-color: #667eea;
+            --accent-color: #00f2fe;
+            --success-color: #28a745;
+            --error-color: #e74c3c;
+            --warning-color: #f39c12;
+            
+            --text-primary: #ffffff;
+            --text-secondary: #b0b0b0;
+            --text-muted: #888888;
+            
+            --bg-primary: #0f0f0f;
+            --bg-secondary: #1a1a1a;
+            --bg-tertiary: #2a2a2a;
+            
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --shadow-light: 0 4px 16px rgba(0, 0, 0, 0.3);
+            --shadow-heavy: 0 8px 32px rgba(0, 0, 0, 0.6);
+            
+            --border-radius: 12px;
+            --border-radius-large: 20px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        :root {
-            --primary-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            --secondary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --success-color: #28a745;
-            --error-color: #ff6b6b;
-            --text-primary: #ffffff;
-            --text-secondary: #cccccc;
-            --bg-primary: #1a1a1a;
-            --bg-secondary: #2d2d2d;
-            --glass-bg: rgba(0, 0, 0, 0.25);
-            --glass-border: rgba(255, 255, 255, 0.1);
-            --shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Noto Sans TC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             line-height: 1.6;
             color: var(--text-primary);
-            background: linear-gradient(90deg, 
-                #2a2a2a 0%, 
-                #3a3a3a 25%, 
-                #2a2a2a 50%, 
-                #3a3a3a 75%, 
-                #2a2a2a 100%
-            );
-            background-size: 4px 100%;
-            position: relative;
-            transition: all 0.3s ease;
+            background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+            overflow-x: hidden;
         }
 
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, 
-                rgba(60, 60, 60, 0.3) 0%, 
-                rgba(80, 80, 80, 0.1) 25%, 
-                rgba(60, 60, 60, 0.3) 50%, 
-                rgba(80, 80, 80, 0.1) 75%, 
-                rgba(60, 60, 60, 0.3) 100%
-            );
-            background-size: 2px 100%;
-            z-index: -1;
-            pointer-events: none;
+        /* 減少動畫效果以提升性能 */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
         }
 
         .container {
@@ -72,10 +79,15 @@
             top: 0;
             width: 100%;
             background: var(--glass-bg);
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--glass-border);
             z-index: 1000;
-            transition: all 0.3s ease;
+            transition: var(--transition);
+        }
+
+        .navbar.scrolled {
+            background: rgba(15, 15, 15, 0.95);
+            box-shadow: var(--shadow-light);
         }
 
         .nav-container {
@@ -87,11 +99,12 @@
 
         .logo {
             font-size: 1.5rem;
-            font-weight: bold;
-            background: var(--primary-gradient);
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            text-decoration: none;
         }
 
         .nav-menu {
@@ -104,12 +117,9 @@
             text-decoration: none;
             color: var(--text-primary);
             font-weight: 500;
-            transition: all 0.3s ease;
+            padding: 0.5rem 0;
             position: relative;
-        }
-
-        .nav-link:hover {
-            color: #4facfe;
+            transition: var(--transition);
         }
 
         .nav-link::after {
@@ -117,17 +127,19 @@
             position: absolute;
             width: 0;
             height: 2px;
-            bottom: -5px;
+            bottom: 0;
             left: 0;
-            background: var(--primary-gradient);
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
             transition: width 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color);
         }
 
         .nav-link:hover::after {
             width: 100%;
         }
-
-
 
         .mobile-menu-toggle {
             display: none;
@@ -136,15 +148,16 @@
             font-size: 1.5rem;
             color: var(--text-primary);
             cursor: pointer;
+            padding: 0.5rem;
         }
 
         /* Hero Section */
         .hero {
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
+            background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 50%, var(--bg-tertiary) 100%);
             position: relative;
             overflow: hidden;
         }
@@ -156,70 +169,76 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: repeating-linear-gradient(
-                45deg,
-                transparent,
-                transparent 2px,
-                rgba(255, 255, 255, 0.05) 2px,
-                rgba(255, 255, 255, 0.05) 4px
-            );
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(79, 172, 254, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(0, 242, 254, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(102, 126, 234, 0.1) 0%, transparent 50%);
+            pointer-events: none;
         }
 
         .hero-content {
             text-align: center;
-            color: #e0e0e0;
             z-index: 2;
             position: relative;
+            max-width: 800px;
         }
 
         .hero-title {
-            font-size: 3.5rem;
-            font-weight: bold;
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 700;
             margin-bottom: 1rem;
-            animation: fadeInUp 1s ease;
+            background: linear-gradient(135deg, var(--text-primary), var(--primary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInUp 1s ease both;
         }
 
         .hero-subtitle {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
+            font-size: 1.25rem;
+            margin-bottom: 3rem;
+            color: var(--text-secondary);
             animation: fadeInUp 1s ease 0.2s both;
         }
 
         .hero-features {
-            display: flex;
-            justify-content: center;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
             animation: fadeInUp 1s ease 0.4s both;
-            flex-wrap: wrap;
         }
 
         .feature-card {
-            background: rgba(45, 45, 45, 0.8);
+            background: var(--glass-bg);
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
+            border: 1px solid var(--glass-border);
+            border-radius: var(--border-radius-large);
             padding: 2rem;
             text-align: center;
-            transition: all 0.3s ease;
-            flex: 1;
-            min-width: 280px;
-            max-width: 350px;
+            transition: var(--transition);
+            cursor: pointer;
         }
 
         .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.7);
-            background: rgba(55, 55, 55, 0.9);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-heavy);
+            background: rgba(255, 255, 255, 0.08);
         }
 
         .feature-icon {
             font-size: 3rem;
             margin-bottom: 1rem;
+            display: block;
         }
 
-        /* Sections */
+        .feature-card h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        /* Section Styles */
         .section {
             padding: 5rem 0;
             background: var(--bg-primary);
@@ -231,12 +250,13 @@
 
         .section-title {
             text-align: center;
-            font-size: 2.5rem;
+            font-size: clamp(2rem, 4vw, 2.5rem);
             margin-bottom: 3rem;
-            background: var(--primary-gradient);
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            font-weight: 700;
         }
 
         /* About Section */
@@ -244,7 +264,45 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 3rem;
-            align-items: center;
+            align-items: start;
+        }
+
+        .about-text h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .about-text h4 {
+            color: var(--accent-color);
+            margin: 1.5rem 0 1rem 0;
+            font-size: 1.2rem;
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .about-text ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .about-text li {
+            padding: 0.5rem 0;
+            color: var(--text-secondary);
+        }
+
+        .quote-text {
+            font-style: italic;
+            color: var(--primary-color);
+            background: var(--glass-bg);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            border-left: 4px solid var(--primary-color);
+            margin: 1.5rem 0;
         }
 
         .timeline {
@@ -259,7 +317,7 @@
             top: 0;
             bottom: 0;
             width: 2px;
-            background: var(--primary-gradient);
+            background: linear-gradient(to bottom, var(--primary-color), var(--accent-color));
         }
 
         .timeline-item {
@@ -276,17 +334,22 @@
             width: 12px;
             height: 12px;
             border-radius: 50%;
-            background: #4facfe;
+            background: var(--primary-color);
+            box-shadow: 0 0 0 4px var(--bg-secondary);
         }
 
         .timeline-year {
-            font-weight: bold;
-            color: #4facfe;
+            font-weight: 700;
+            color: var(--primary-color);
             font-size: 1.1rem;
         }
 
-        /* Services Section */
+        .timeline-content {
+            color: var(--text-secondary);
+            margin-top: 0.5rem;
+        }
 
+        /* Services Section */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -297,34 +360,50 @@
             background: var(--glass-bg);
             backdrop-filter: blur(10px);
             border: 1px solid var(--glass-border);
-            border-radius: 20px;
+            border-radius: var(--border-radius-large);
             padding: 2rem;
-            transition: all 0.3s ease;
+            transition: var(--transition);
+            cursor: pointer;
         }
 
         .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-heavy);
+            border-color: var(--primary-color);
         }
 
         .service-icon {
             width: 60px;
             height: 60px;
-            background: var(--primary-gradient);
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1.5rem;
             color: white;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card h3 {
             margin-bottom: 1rem;
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .service-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
         }
 
         /* News Section */
         .news-slider {
             position: relative;
             overflow: hidden;
-            border-radius: 20px;
+            border-radius: var(--border-radius-large);
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
         }
 
         .news-container {
@@ -334,11 +413,36 @@
 
         .news-item {
             min-width: 100%;
-            background: var(--glass-bg);
-            backdrop-filter: blur(10px);
-            border: 1px solid var(--glass-border);
             padding: 2rem;
-            border-radius: 20px;
+        }
+
+        .news-item h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .news-date {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .news-item p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .news-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .news-link:hover {
+            color: var(--accent-color);
         }
 
         .news-controls {
@@ -352,15 +456,19 @@
             width: 40px;
             height: 40px;
             border-radius: 50%;
-            background: var(--primary-gradient);
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
             border: none;
             color: white;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .news-btn:hover {
             transform: scale(1.1);
+            box-shadow: var(--shadow-light);
         }
 
         /* Contact Section */
@@ -370,12 +478,20 @@
             gap: 3rem;
         }
 
-        .contact-form {
+        .contact-form,
+        .contact-info {
             background: var(--glass-bg);
             backdrop-filter: blur(10px);
             border: 1px solid var(--glass-border);
-            border-radius: 20px;
+            border-radius: var(--border-radius-large);
             padding: 2rem;
+        }
+
+        .contact-form h3,
+        .contact-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+            font-size: 1.5rem;
         }
 
         .form-group {
@@ -392,20 +508,26 @@
         .form-input,
         .form-textarea {
             width: 100%;
-            padding: 0.75rem;
+            padding: 0.75rem 1rem;
             border: 1px solid var(--glass-border);
-            border-radius: 10px;
+            border-radius: var(--border-radius);
             background: var(--glass-bg);
             backdrop-filter: blur(10px);
             color: var(--text-primary);
-            transition: all 0.3s ease;
+            transition: var(--transition);
+            font-family: inherit;
         }
 
         .form-input:focus,
         .form-textarea:focus {
             outline: none;
-            border-color: #4facfe;
+            border-color: var(--primary-color);
             box-shadow: 0 0 0 3px rgba(79, 172, 254, 0.1);
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 120px;
         }
 
         .form-error {
@@ -415,54 +537,73 @@
         }
 
         .submit-btn {
-            background: var(--primary-gradient);
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
             color: white;
             border: none;
-            border-radius: 25px;
+            border-radius: var(--border-radius-large);
             padding: 0.75rem 2rem;
             font-size: 1rem;
+            font-weight: 500;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: var(--transition);
             width: 100%;
         }
 
         .submit-btn:hover {
             transform: translateY(-2px);
-            box-shadow: var(--shadow);
+            box-shadow: var(--shadow-heavy);
         }
 
-        .contact-info {
-            background: var(--glass-bg);
-            backdrop-filter: blur(10px);
-            border: 1px solid var(--glass-border);
-            border-radius: 20px;
-            padding: 2rem;
+        .submit-btn:active {
+            transform: translateY(0);
         }
 
         .contact-item {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             margin-bottom: 1.5rem;
         }
 
         .contact-icon {
             width: 40px;
             height: 40px;
-            background: var(--primary-gradient);
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
             margin-right: 1rem;
+            flex-shrink: 0;
+        }
+
+        .contact-details {
+            flex: 1;
+        }
+
+        .contact-details strong {
+            color: var(--text-primary);
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+
+        .contact-details a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .contact-details a:hover {
+            color: var(--accent-color);
         }
 
         .map-container {
             width: 100%;
             height: 300px;
-            border-radius: 15px;
+            border-radius: var(--border-radius);
             overflow: hidden;
             margin-top: 2rem;
+            border: 1px solid var(--glass-border);
         }
 
         /* Modal */
@@ -474,19 +615,20 @@
             top: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0.7);
             backdrop-filter: blur(5px);
         }
 
         .modal-content {
-            background: var(--bg-primary);
-            margin: 15% auto;
+            background: var(--bg-secondary);
+            margin: 10% auto;
             padding: 2rem;
-            border-radius: 20px;
+            border-radius: var(--border-radius-large);
             width: 90%;
             max-width: 500px;
             text-align: center;
             animation: modalSlideIn 0.3s ease;
+            border: 1px solid var(--glass-border);
         }
 
         .modal-icon {
@@ -496,12 +638,13 @@
         }
 
         .close {
-            color: var(--text-secondary);
+            color: var(--text-muted);
             float: right;
             font-size: 28px;
             font-weight: bold;
             cursor: pointer;
             line-height: 1;
+            transition: var(--transition);
         }
 
         .close:hover {
@@ -523,11 +666,11 @@
         @keyframes modalSlideIn {
             from {
                 opacity: 0;
-                transform: translateY(-50px);
+                transform: translateY(-50px) scale(0.9);
             }
             to {
                 opacity: 1;
-                transform: translateY(0);
+                transform: translateY(0) scale(1);
             }
         }
 
@@ -542,6 +685,32 @@
             transform: translateY(0);
         }
 
+        /* Loading State */
+        .loading {
+            pointer-events: none;
+            opacity: 0.7;
+        }
+
+        .loading::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 20px;
+            height: 20px;
+            margin: -10px 0 0 -10px;
+            border: 2px solid var(--primary-color);
+            border-top-color: transparent;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             .mobile-menu-toggle {
@@ -554,19 +723,20 @@
                 top: 100%;
                 left: 0;
                 width: 100%;
-                background: var(--glass-bg);
-                backdrop-filter: blur(10px);
+                background: rgba(15, 15, 15, 0.95);
+                backdrop-filter: blur(20px);
                 flex-direction: column;
                 padding: 1rem;
                 border-top: 1px solid var(--glass-border);
+                box-shadow: var(--shadow-light);
             }
 
             .nav-menu.active {
                 display: flex;
             }
 
-            .hero-title {
-                font-size: 2.5rem;
+            .nav-menu li {
+                margin: 0.5rem 0;
             }
 
             .hero-features {
@@ -576,26 +746,29 @@
             .about-content,
             .contact-content {
                 grid-template-columns: 1fr;
+                gap: 2rem;
             }
 
             .services-grid {
                 grid-template-columns: 1fr;
             }
 
+            .timeline {
+                padding-left: 1.5rem;
+            }
 
+            .timeline-item {
+                padding-left: 1.5rem;
+            }
+
+            .section {
+                padding: 3rem 0;
+            }
         }
 
         @media (max-width: 480px) {
             .container {
                 padding: 0 15px;
-            }
-
-            .hero-title {
-                font-size: 2rem;
-            }
-
-            .section-title {
-                font-size: 2rem;
             }
 
             .feature-card,
@@ -604,15 +777,69 @@
             .contact-info {
                 padding: 1.5rem;
             }
+
+            .modal-content {
+                margin: 20% auto;
+                padding: 1.5rem;
+            }
+        }
+
+        /* Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            .navbar,
+            .feature-card,
+            .service-card,
+            .news-btn,
+            .submit-btn {
+                transition: none;
+            }
+            
+            .hero-title,
+            .hero-subtitle,
+            .hero-features {
+                animation: none;
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        /* Focus styles for accessibility */
+        .nav-link:focus,
+        .form-input:focus,
+        .form-textarea:focus,
+        .submit-btn:focus,
+        .news-btn:focus {
+            outline: 2px solid var(--primary-color);
+            outline-offset: 2px;
+        }
+
+        /* Print styles */
+        @media print {
+            .navbar,
+            .news-controls,
+            .submit-btn,
+            .modal {
+                display: none;
+            }
+            
+            .section {
+                padding: 1rem 0;
+                break-inside: avoid;
+            }
+            
+            body {
+                background: white;
+                color: black;
+            }
         }
     </style>
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" id="navbar">
         <div class="container">
             <div class="nav-container">
-                <div class="logo">東南銘版</div>
+                <a href="#home" class="logo">東南銘版</a>
                 <ul class="nav-menu" id="navMenu">
                     <li><a href="#home" class="nav-link">首頁</a></li>
                     <li><a href="#about" class="nav-link">關於我們</a></li>
@@ -620,8 +847,7 @@
                     <li><a href="#news" class="nav-link">最新消息</a></li>
                     <li><a href="#contact" class="nav-link">聯絡我們</a></li>
                 </ul>
-
-                <button class="mobile-menu-toggle" id="mobileToggle">☰</button>
+                <button class="mobile-menu-toggle" id="mobileToggle" aria-label="開啟選單">☰</button>
             </div>
         </div>
     </nav>
@@ -634,36 +860,625 @@
                 <p class="hero-subtitle">專業金屬銘版製造 · 品質卓越 · 服務至上</p>
                 <div class="hero-features">
                     <div class="feature-card">
-                        <div class="feature-icon">🏭</div>
+                        <span class="feature-icon">🏭</span>
                         <h3>專業製造</h3>
-                        <p>30年專業經驗，精密設備製造高品質銘版產品</p>
+                        <p>35年專業經驗，精密設備製造高品質銘版產品</p>
                     </div>
                     <div class="feature-card">
-                        <div class="feature-icon">⚙️</div>
+                        <span class="feature-icon">⚙️</span>
                         <h3>多元工法</h3>
                         <p>雷雕、蝕刻、UV印刷等多種工藝技術</p>
                     </div>
                     <div class="feature-card">
-                        <div class="feature-icon">✅</div>
+                        <span class="feature-icon">✅</span>
                         <h3>品質控管</h3>
-                        <p>嚴格品質管控，確保每件產品符合標準</p>
+                        <p>ISO9001認證，嚴格品質管控系統</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- Services Section -->
+    <section id="services" class="section">
+        <div class="container">
+            <h2 class="section-title fade-in">服務項目</h2>
+            <div class="services-grid fade-in">
+                <div class="service-card">
+                    <div class="service-icon">🏷️</div>
+                    <h3>金屬銘版</h3>
+                    <p>不鏽鋼、鋁合金等金屬材質銘版製造，耐用性佳，適合各種工業應用</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🥉</div>
+                    <h3>銅板加工</h3>
+                    <p>專業銅板蝕刻與加工技術，精緻細膩的表面處理，品質優良</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💻</div>
+                    <h3>PC材質加工</h3>
+                    <p>聚碳酸酯材質加工，透明度高、耐衝擊性強，電子產品首選</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔧</div>
+                    <h3>PVC材質加工</h3>
+                    <p>聚氯乙烯材質加工，成本效益高、應用廣泛，多色選擇</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">✨</div>
+                    <h3>MAYLAR材質</h3>
+                    <p>聚酯薄膜材質，具優異的電氣絕緣性能，耐高溫特性</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🎨</div>
+                    <h3>特殊印刷</h3>
+                    <p>各式特殊印刷技術，滿足不同材質與效果需求，色彩豐富</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">⚙️</div>
+                    <h3>雷雕加工</h3>
+                    <p>精密雷射雕刻技術，可製作細緻圖案與文字，精度極高</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏭</div>
+                    <h3>加工承製</h3>
+                    <p>提供各式材質的專業加工承製服務，客製化解決方案</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section id="news" class="section">
+        <div class="container">
+            <h2 class="section-title fade-in">最新消息</h2>
+            <div class="news-slider fade-in">
+                <div class="news-container" id="newsContainer">
+                    <article class="news-item">
+                        <h3>🎉 參展台北國際工具機展</h3>
+                        <p class="news-date">2024年3月15日</p>
+                        <p>東南銘版將於3月20-25日參加台北國際工具機展，展示最新的雷雕技術與產品。歡迎蒞臨攤位參觀，現場將有專業人員為您介紹我們的服務，並提供技術諮詢。</p>
+                        <a href="#contact" class="news-link">了解更多 →</a>
+                    </article>
+                    <article class="news-item">
+                        <h3>🚀 新增UV印刷產線</h3>
+                        <p class="news-date">2024年2月28日</p>
+                        <p>為了提供更多元的服務，我們新增了UV印刷產線，可提供高品質的彩色印刷服務。無論是企業LOGO或複雜圖案，都能完美呈現，色彩飽和度高且耐久性佳。</p>
+                        <a href="#contact" class="news-link">立即詢問 →</a>
+                    </article>
+                    <article class="news-item">
+                        <h3>🏆 榮獲品質認證</h3>
+                        <p class="news-date">2024年1月10日</p>
+                        <p>東南銘版通過ISO 9001品質管理系統認證，這是對我們品質管控能力的肯定。我們將持續提升服務品質，為客戶提供更優質的產品與專業服務。</p>
+                        <a href="#about" class="news-link">查看詳情 →</a>
+                    </article>
+                </div>
+                <div class="news-controls">
+                    <button class="news-btn" id="prevNews" aria-label="上一則消息">‹</button>
+                    <button class="news-btn" id="nextNews" aria-label="下一則消息">›</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title fade-in">聯絡我們</h2>
+            <div class="contact-content">
+                <div class="contact-form fade-in">
+                    <h3>聯絡表單</h3>
+                    <form id="contactForm" novalidate>
+                        <div class="form-group">
+                            <label class="form-label" for="name">姓名 *</label>
+                            <input type="text" class="form-input" id="name" name="name" required autocomplete="name">
+                            <div class="form-error" id="nameError" role="alert"></div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="phone">電話 *</label>
+                            <input type="tel" class="form-input" id="phone" name="phone" required autocomplete="tel">
+                            <div class="form-error" id="phoneError" role="alert"></div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="email">Email *</label>
+                            <input type="email" class="form-input" id="email" name="email" required autocomplete="email">
+                            <div class="form-error" id="emailError" role="alert"></div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="message">需求內容 *</label>
+                            <textarea class="form-textarea" id="message" name="message" rows="5" required placeholder="請詳細描述您的需求..."></textarea>
+                            <div class="form-error" id="messageError" role="alert"></div>
+                        </div>
+                        <button type="submit" class="submit-btn">送出詢問</button>
+                    </form>
+                </div>
+                <div class="contact-info fade-in">
+                    <h3>聯絡資訊</h3>
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-details">
+                            <strong>地址</strong>
+                            241 新北市三重區中正北路331巷10弄4號<br>
+                            <small style="color: var(--text-muted);">NO.4, ALLEY 10, LANE 331, CHUNGCHENG N. RD., SAN-CHUNG CITY, TAIPEI HSIEH 241, TAIWAN R.O.C.</small>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div class="contact-details">
+                            <strong>電話</strong>
+                            <a href="tel:+886-2-2982-0065">886-2-2982-0065</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📠</div>
+                        <div class="contact-details">
+                            <strong>傳真</strong>
+                            886-2-2971-8649
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">🌐</div>
+                        <div class="contact-details">
+                            <strong>網址</strong>
+                            <a href="http://www.southeast99.com.tw/" target="_blank" rel="noopener">www.southeast99.com.tw</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">🕒</div>
+                        <div class="contact-details">
+                            <strong>營業時間</strong>
+                            週一至週五 08:00-17:00
+                        </div>
+                    </div>
+                    <div class="map-container">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.194!2d121.4987!3d25.0658!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a8c176ec5d33%3A0xfee61682b71b0421!2z5p!5e0!3m2!1szh-TW!2stw!4v1620000000000!5m2!1szh-TW!2stw"
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="東南銘版公司地圖">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
+        <div class="modal-content">
+            <span class="close" aria-label="關閉">&times;</span>
+            <div class="modal-icon">✅</div>
+            <h3 id="modalTitle">訊息發送成功！</h3>
+            <p>感謝您的詢問，我們將盡快與您聯繫。</p>
+        </div>
+    </div>
+
+    <script>
+        // 全域變數
+        let currentSlide = 0;
+        let isScrolling = false;
+        let newsAutoSlideInterval;
+
+        // DOM 元素
+        const elements = {
+            navbar: document.getElementById('navbar'),
+            mobileToggle: document.getElementById('mobileToggle'),
+            navMenu: document.getElementById('navMenu'),
+            newsContainer: document.getElementById('newsContainer'),
+            prevBtn: document.getElementById('prevNews'),
+            nextBtn: document.getElementById('nextNews'),
+            contactForm: document.getElementById('contactForm'),
+            modal: document.getElementById('successModal'),
+            closeModal: document.querySelector('.close')
+        };
+
+        // 工具函數
+        const utils = {
+            throttle: (func, delay) => {
+                let timeoutId;
+                let lastExecTime = 0;
+                return function (...args) {
+                    const currentTime = Date.now();
+                    
+                    if (currentTime - lastExecTime > delay) {
+                        func.apply(this, args);
+                        lastExecTime = currentTime;
+                    } else {
+                        clearTimeout(timeoutId);
+                        timeoutId = setTimeout(() => {
+                            func.apply(this, args);
+                            lastExecTime = Date.now();
+                        }, delay - (currentTime - lastExecTime));
+                    }
+                };
+            },
+
+            debounce: (func, delay) => {
+                let timeoutId;
+                return function (...args) {
+                    clearTimeout(timeoutId);
+                    timeoutId = setTimeout(() => func.apply(this, args), delay);
+                };
+            },
+
+            validateEmail: (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email),
+            validatePhone: (phone) => /^[\d\-\(\)\+\s]+$/.test(phone) && phone.replace(/\D/g, '').length >= 8
+        };
+
+        // 導航功能
+        const navigation = {
+            init() {
+                elements.mobileToggle.addEventListener('click', this.toggleMobileMenu);
+                
+                // 平滑滾動
+                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                    anchor.addEventListener('click', this.handleSmoothScroll);
+                });
+
+                // 滾動效果
+                window.addEventListener('scroll', utils.throttle(this.handleScroll, 100));
+            },
+
+            toggleMobileMenu() {
+                elements.navMenu.classList.toggle('active');
+                const isActive = elements.navMenu.classList.contains('active');
+                elements.mobileToggle.setAttribute('aria-expanded', isActive);
+            },
+
+            handleSmoothScroll(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const target = document.querySelector(targetId);
+                
+                if (target) {
+                    const offsetTop = target.offsetTop - 80; // 考慮導航欄高度
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                    elements.navMenu.classList.remove('active');
+                    elements.mobileToggle.setAttribute('aria-expanded', 'false');
+                }
+            },
+
+            handleScroll() {
+                if (isScrolling) return;
+                
+                const scrollY = window.scrollY;
+                
+                // 導航欄背景效果
+                if (scrollY > 100) {
+                    elements.navbar.classList.add('scrolled');
+                } else {
+                    elements.navbar.classList.remove('scrolled');
+                }
+            }
+        };
+
+        // 新聞輪播功能
+        const newsSlider = {
+            totalSlides: document.querySelectorAll('.news-item').length,
+
+            init() {
+                if (this.totalSlides === 0) return;
+
+                elements.nextBtn.addEventListener('click', () => this.nextSlide());
+                elements.prevBtn.addEventListener('click', () => this.prevSlide());
+                
+                this.startAutoSlide();
+                
+                // 滑鼠懸停時暫停自動播放
+                elements.newsContainer.parentElement.addEventListener('mouseenter', () => this.stopAutoSlide());
+                elements.newsContainer.parentElement.addEventListener('mouseleave', () => this.startAutoSlide());
+            },
+
+            updateSlider() {
+                const translateX = -currentSlide * 100;
+                elements.newsContainer.style.transform = `translateX(${translateX}%)`;
+                
+                // 更新按鈕狀態
+                elements.prevBtn.disabled = currentSlide === 0;
+                elements.nextBtn.disabled = currentSlide === this.totalSlides - 1;
+            },
+
+            nextSlide() {
+                currentSlide = (currentSlide + 1) % this.totalSlides;
+                this.updateSlider();
+            },
+
+            prevSlide() {
+                currentSlide = (currentSlide - 1 + this.totalSlides) % this.totalSlides;
+                this.updateSlider();
+            },
+
+            startAutoSlide() {
+                this.stopAutoSlide();
+                newsAutoSlideInterval = setInterval(() => this.nextSlide(), 5000);
+            },
+
+            stopAutoSlide() {
+                if (newsAutoSlideInterval) {
+                    clearInterval(newsAutoSlideInterval);
+                    newsAutoSlideInterval = null;
+                }
+            }
+        };
+
+        // 表單驗證功能
+        const formValidation = {
+            init() {
+                elements.contactForm.addEventListener('submit', this.handleSubmit.bind(this));
+                
+                // 即時驗證
+                ['name', 'phone', 'email', 'message'].forEach(fieldName => {
+                    const field = document.getElementById(fieldName);
+                    field.addEventListener('blur', () => this.validateField(fieldName));
+                    field.addEventListener('input', utils.debounce(() => this.clearError(fieldName), 300));
+                });
+            },
+
+            validateField(fieldName) {
+                const field = document.getElementById(fieldName);
+                const errorElement = document.getElementById(fieldName + 'Error');
+                const value = field.value.trim();
+
+                let isValid = true;
+                let errorMessage = '';
+
+                switch (fieldName) {
+                    case 'name':
+                        if (!value) {
+                            errorMessage = '請輸入姓名';
+                            isValid = false;
+                        } else if (value.length < 2) {
+                            errorMessage = '姓名至少需要2個字元';
+                            isValid = false;
+                        }
+                        break;
+
+                    case 'phone':
+                        if (!value) {
+                            errorMessage = '請輸入電話號碼';
+                            isValid = false;
+                        } else if (!utils.validatePhone(value)) {
+                            errorMessage = '請輸入有效的電話號碼';
+                            isValid = false;
+                        }
+                        break;
+
+                    case 'email':
+                        if (!value) {
+                            errorMessage = '請輸入Email';
+                            isValid = false;
+                        } else if (!utils.validateEmail(value)) {
+                            errorMessage = '請輸入有效的Email格式';
+                            isValid = false;
+                        }
+                        break;
+
+                    case 'message':
+                        if (!value) {
+                            errorMessage = '請輸入需求內容';
+                            isValid = false;
+                        } else if (value.length < 10) {
+                            errorMessage = '需求內容至少需要10個字元';
+                            isValid = false;
+                        }
+                        break;
+                }
+
+                this.showError(errorElement, errorMessage);
+                return isValid;
+            },
+
+            clearError(fieldName) {
+                const errorElement = document.getElementById(fieldName + 'Error');
+                errorElement.textContent = '';
+            },
+
+            showError(errorElement, message) {
+                errorElement.textContent = message;
+            },
+
+            async handleSubmit(e) {
+                e.preventDefault();
+
+                const fields = ['name', 'phone', 'email', 'message'];
+                let isFormValid = true;
+
+                // 驗證所有欄位
+                fields.forEach(fieldName => {
+                    if (!this.validateField(fieldName)) {
+                        isFormValid = false;
+                    }
+                });
+
+                if (isFormValid) {
+                    try {
+                        // 顯示載入狀態
+                        const submitBtn = elements.contactForm.querySelector('.submit-btn');
+                        const originalText = submitBtn.textContent;
+                        submitBtn.textContent = '發送中...';
+                        submitBtn.disabled = true;
+
+                        // 模擬發送延遲
+                        await new Promise(resolve => setTimeout(resolve, 1000));
+
+                        // 顯示成功訊息
+                        this.showSuccessModal();
+                        
+                        // 重置表單
+                        elements.contactForm.reset();
+                        fields.forEach(fieldName => this.clearError(fieldName));
+
+                        // 恢復按鈕狀態
+                        submitBtn.textContent = originalText;
+                        submitBtn.disabled = false;
+
+                    } catch (error) {
+                        console.error('表單提交錯誤:', error);
+                        alert('發送失敗，請稍後再試');
+                    }
+                }
+            },
+
+            showSuccessModal() {
+                elements.modal.style.display = 'block';
+                elements.modal.setAttribute('aria-hidden', 'false');
+                
+                // 聚焦到模態框
+                elements.modal.querySelector('.modal-content').focus();
+
+                // 自動關閉
+                setTimeout(() => this.hideModal(), 3000);
+            },
+
+            hideModal() {
+                elements.modal.style.display = 'none';
+                elements.modal.setAttribute('aria-hidden', 'true');
+            }
+        };
+
+        // 滾動動畫
+        const scrollAnimations = {
+            init() {
+                const observerOptions = {
+                    threshold: 0.1,
+                    rootMargin: '0px 0px -50px 0px'
+                };
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                        }
+                    });
+                }, observerOptions);
+
+                document.querySelectorAll('.fade-in').forEach(el => {
+                    observer.observe(el);
+                });
+            }
+        };
+
+        // 模態框功能
+        const modal = {
+            init() {
+                elements.closeModal.addEventListener('click', formValidation.hideModal);
+                
+                window.addEventListener('click', (e) => {
+                    if (e.target === elements.modal) {
+                        formValidation.hideModal();
+                    }
+                });
+
+                // ESC 鍵關閉模態框
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape' && elements.modal.style.display === 'block') {
+                        formValidation.hideModal();
+                    }
+                });
+            }
+        };
+
+        // 效能優化
+        const performance = {
+            init() {
+                // 延遲載入非關鍵資源
+                this.lazyLoadImages();
+                
+                // 預載入重要頁面
+                this.preloadCriticalResources();
+            },
+
+            lazyLoadImages() {
+                const images = document.querySelectorAll('img[data-src]');
+                const imageObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const img = entry.target;
+                            img.src = img.dataset.src;
+                            img.removeAttribute('data-src');
+                            imageObserver.unobserve(img);
+                        }
+                    });
+                });
+
+                images.forEach(img => imageObserver.observe(img));
+            },
+
+            preloadCriticalResources() {
+                // 預載入重要的 CSS 和字體
+                const preloadLinks = [
+                    'https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap'
+                ];
+
+                preloadLinks.forEach(href => {
+                    const link = document.createElement('link');
+                    link.rel = 'preload';
+                    link.as = 'style';
+                    link.href = href;
+                    document.head.appendChild(link);
+                });
+            }
+        };
+
+        // 初始化應用程序
+        const app = {
+            init() {
+                // 檢查瀏覽器支援
+                if (!('IntersectionObserver' in window)) {
+                    console.warn('瀏覽器不支援 IntersectionObserver');
+                    return;
+                }
+
+                // 初始化各模組
+                navigation.init();
+                newsSlider.init();
+                formValidation.init();
+                scrollAnimations.init();
+                modal.init();
+                performance.init();
+
+                // 設定初始狀態
+                newsSlider.updateSlider();
+                
+                console.log('東南銘版網站初始化完成');
+            }
+        };
+
+        // 等待 DOM 載入完成後初始化
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', app.init);
+        } else {
+            app.init();
+        }
+
+        // 處理頁面卸載
+        window.addEventListener('beforeunload', () => {
+            newsSlider.stopAutoSlide();
+        });
+
+    </script>
+</body>
+</html><!-- About Section -->
     <section id="about" class="section">
         <div class="container">
             <h2 class="section-title fade-in">關於我們</h2>
             <div class="about-content">
-                <div class="fade-in">
+                <div class="about-text fade-in">
                     <h3>公司簡介</h3>
-                    <p>東南銘版有限公司 (South East Engrave Board Co.,Ltd.) 成立於民國76年10月30日，專精於金屬銘版製造領域已超過35年，並通過ISO9001驗證。我們致力於提供客戶最優質的銘版產品與服務，從設計、製造到交付，每個環節都秉持著專業與品質的堅持。</p>
-                    <br>
+                    <p>東南銘版有限公司成立於民國76年10月30日，專精於金屬銘版製造領域已超過35年，並通過ISO9001驗證。我們致力於提供客戶最優質的銘版產品與服務，從設計、製造到交付，每個環節都秉持著專業與品質的堅持。</p>
+                    
                     <h4>經營理念</h4>
-                    <p style="font-style: italic; color: #4facfe; margin-bottom: 1rem;">『品質』是打不倒的招牌 『信用』是用不完的資本<br>愉快心情是工作最大動力 ----整廠全員努力實現參與</p>
+                    <div class="quote-text">
+                        『品質』是打不倒的招牌 『信用』是用不完的資本<br>
+                        愉快心情是工作最大動力 ——整廠全員努力實現參與
+                    </div>
                     
                     <h4>經營目標</h4>
                     <ul>
@@ -680,390 +1495,29 @@
                 <div class="timeline fade-in">
                     <div class="timeline-item">
                         <div class="timeline-year">1987</div>
-                        <div>民國76年10月30日公司成立，開始專業銘版製造</div>
+                        <div class="timeline-content">民國76年10月30日公司成立，開始專業銘版製造</div>
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-year">1995</div>
-                        <div>擴展業務範圍，增加PC、PVC材質加工</div>
+                        <div class="timeline-content">擴展業務範圍，增加PC、PVC材質加工</div>
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-year">2005</div>
-                        <div>通過ISO9001品質管理系統驗證</div>
+                        <div class="timeline-content">通過ISO9001品質管理系統驗證</div>
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-year">2010</div>
-                        <div>引進雷雕技術，提升產品精度與品質</div>
+                        <div class="timeline-content">引進雷雕技術，提升產品精度與品質</div>
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-year">2018</div>
-                        <div>導入特殊印刷技術，豐富產品線</div>
+                        <div class="timeline-content">導入特殊印刷技術，豐富產品線</div>
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-year">2024</div>
-                        <div>持續技術創新，追求卓越品質</div>
+                        <div class="timeline-content">持續技術創新，追求卓越品質</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Services Section -->
-    <section id="services" class="section">
-        <div class="container">
-            <h2 class="section-title fade-in">服務項目</h2>
-
-            <div class="services-grid fade-in">
-                <div class="service-card" data-category="metal">
-                    <div class="service-icon">🏷️</div>
-                    <h3>金屬銘版</h3>
-                    <p>不鏽鋼、鋁合金等金屬材質銘版製造，耐用性佳</p>
-                </div>
-                <div class="service-card" data-category="metal">
-                    <div class="service-icon">🥉</div>
-                    <h3>銅板加工</h3>
-                    <p>專業銅板蝕刻與加工技術，精緻細膩的表面處理</p>
-                </div>
-                <div class="service-card" data-category="laser">
-                    <div class="service-icon">💻</div>
-                    <h3>PC材質加工</h3>
-                    <p>聚碳酸酯材質加工，透明度高、耐衝擊性強</p>
-                </div>
-                <div class="service-card" data-category="laser">
-                    <div class="service-icon">🔧</div>
-                    <h3>PVC材質加工</h3>
-                    <p>聚氯乙烯材質加工，成本效益高、應用廣泛</p>
-                </div>
-                <div class="service-card" data-category="uv">
-                    <div class="service-icon">✨</div>
-                    <h3>MAYLAR材質</h3>
-                    <p>聚酯薄膜材質，具優異的電氣絕緣性能</p>
-                </div>
-                <div class="service-card" data-category="uv">
-                    <div class="service-icon">🎨</div>
-                    <h3>特殊印刷</h3>
-                    <p>各式特殊印刷技術，滿足不同材質與效果需求</p>
-                </div>
-                <div class="service-card" data-category="custom">
-                    <div class="service-icon">⚙️</div>
-                    <h3>雷雕加工</h3>
-                    <p>精密雷射雕刻技術，可製作細緻圖案與文字</p>
-                </div>
-                <div class="service-card" data-category="custom">
-                    <div class="service-icon">🏭</div>
-                    <h3>加工承製</h3>
-                    <p>提供各式材質的專業加工承製服務</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- News Section -->
-    <section id="news" class="section">
-        <div class="container">
-            <h2 class="section-title fade-in">最新消息</h2>
-            <div class="news-slider fade-in">
-                <div class="news-container" id="newsContainer">
-                    <div class="news-item">
-                        <h3>🎉 參展台北國際工具機展</h3>
-                        <p class="news-date">2024年3月15日</p>
-                        <p>東南銘版將於3月20-25日參加台北國際工具機展，展示最新的雷雕技術與產品。歡迎蒞臨攤位參觀，現場將有專業人員為您介紹我們的服務。</p>
-                        <a href="#" class="news-link">閱讀更多 →</a>
-                    </div>
-                    <div class="news-item">
-                        <h3>🚀 新增UV印刷產線</h3>
-                        <p class="news-date">2024年2月28日</p>
-                        <p>為了提供更多元的服務，我們新增了UV印刷產線，可提供高品質的彩色印刷服務。無論是企業LOGO或複雜圖案，都能完美呈現。</p>
-                        <a href="#" class="news-link">閱讀更多 →</a>
-                    </div>
-                    <div class="news-item">
-                        <h3>🏆 榮獲品質認證</h3>
-                        <p class="news-date">2024年1月10日</p>
-                        <p>東南銘版通過ISO 9001品質管理系統認證，這是對我們品質管控能力的肯定。我們將持續提升服務品質，為客戶提供更優質的產品。</p>
-                        <a href="#" class="news-link">閱讀更多 →</a>
-                    </div>
-                </div>
-                <div class="news-controls">
-                    <button class="news-btn" id="prevNews">‹</button>
-                    <button class="news-btn" id="nextNews">›</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="section">
-        <div class="container">
-            <h2 class="section-title fade-in">聯絡我們</h2>
-            <div class="contact-content">
-                <div class="contact-form fade-in">
-                    <h3>聯絡表單</h3>
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <label class="form-label">姓名 *</label>
-                            <input type="text" class="form-input" id="name" required>
-                            <div class="form-error" id="nameError"></div>
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label">電話 *</label>
-                            <input type="tel" class="form-input" id="phone" required>
-                            <div class="form-error" id="phoneError"></div>
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label">Email *</label>
-                            <input type="email" class="form-input" id="email" required>
-                            <div class="form-error" id="emailError"></div>
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label">需求內容 *</label>
-                            <textarea class="form-textarea" id="message" rows="5" required></textarea>
-                            <div class="form-error" id="messageError"></div>
-                        </div>
-                        <button type="submit" class="submit-btn">送出詢問</button>
-                    </form>
-                </div>
-                <div class="contact-info fade-in">
-                    <h3>聯絡資訊</h3>
-                    <div class="contact-item">
-                        <div class="contact-icon">📍</div>
-                        <div>
-                            <strong>地址</strong><br>
-                            241 新北市三重區中正北路331巷10弄4號<br>
-                            <small style="color: var(--text-secondary);">NO.4,ALLEY 10,LANE 331,CHUNGCHENGN. RD.,SAN-CHUNG CITY,TAIPEI HSIEH 241,TAIWAN R.O.C.</small>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">📞</div>
-                        <div>
-                            <strong>電話</strong><br>
-                            886-2-2982-0065
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">📠</div>
-                        <div>
-                            <strong>傳真</strong><br>
-                            886-2-2971-8649
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">🌐</div>
-                        <div>
-                            <strong>網址</strong><br>
-                            <a href="http://www.southeast99.com.tw/" target="_blank" style="color: #4facfe;">www.southeast99.com.tw</a>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">🕒</div>
-                        <div>
-                            <strong>營業時間</strong><br>
-                            週一至週五 08:00-17:00
-                        </div>
-                    </div>
-                    <div class="map-container">
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d903.469778379417!2d121.. !3d25.. !2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a8c176ec5d33%3A0xfee61682b71b0421!2zMjQx5paw5YyX5biC5LiJ6YeN5Y2A5Lit5q2j5YyX6LevMzMx5be3MTDlvIQ06Jmf!5e0!3m2!1szh-TW!2stw!4v. !5m2!1szh-TW!2stw"
-                            width="100%" 
-                            height="100%" 
-                            style="border:0;" 
-                            allowfullscreen="" 
-                            loading="lazy" 
-                            referrerpolicy="no-referrer-when-downgrade">
-                        </iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Success Modal -->
-    <div id="successModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <div class="modal-icon">✅</div>
-            <h3>訊息發送成功！</h3>
-            <p>感謝您的詢問，我們將盡快與您聯繫。</p>
-        </div>
-    </div>
-
-    <script>
-        const body = document.body;
-
-        // Mobile Menu Toggle
-        const mobileToggle = document.getElementById('mobileToggle');
-        const navMenu = document.getElementById('navMenu');
-
-        mobileToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-        });
-
-        // Smooth Scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                    navMenu.classList.remove('active');
-                }
-            });
-        });
-
-
-
-        // News Slider
-        const newsContainer = document.getElementById('newsContainer');
-        const prevBtn = document.getElementById('prevNews');
-        const nextBtn = document.getElementById('nextNews');
-        let currentSlide = 0;
-        const totalSlides = document.querySelectorAll('.news-item').length;
-
-        function updateSlider() {
-            const translateX = -currentSlide * 100;
-            newsContainer.style.transform = `translateX(${translateX}%)`;
-        }
-
-        nextBtn.addEventListener('click', () => {
-            currentSlide = (currentSlide + 1) % totalSlides;
-            updateSlider();
-        });
-
-        prevBtn.addEventListener('click', () => {
-            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-            updateSlider();
-        });
-
-        // Auto-slide news
-        setInterval(() => {
-            currentSlide = (currentSlide + 1) % totalSlides;
-            updateSlider();
-        }, 5000);
-
-        // Form Validation and Submission
-        const contactForm = document.getElementById('contactForm');
-        const modal = document.getElementById('successModal');
-        const closeModal = document.querySelector('.close');
-
-        function validateField(field, errorElement, message) {
-            if (!field.value.trim()) {
-                errorElement.textContent = message;
-                return false;
-            }
-            errorElement.textContent = '';
-            return true;
-        }
-
-        function validateEmail(email) {
-            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            return re.test(email);
-        }
-
-        function validatePhone(phone) {
-            const re = /^[\d\-\(\)\+\s]+$/;
-            return re.test(phone) && phone.replace(/\D/g, '').length >= 8;
-        }
-
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-
-            const name = document.getElementById('name');
-            const phone = document.getElementById('phone');
-            const email = document.getElementById('email');
-            const message = document.getElementById('message');
-
-            const nameError = document.getElementById('nameError');
-            const phoneError = document.getElementById('phoneError');
-            const emailError = document.getElementById('emailError');
-            const messageError = document.getElementById('messageError');
-
-            let isValid = true;
-
-            // Validate name
-            if (!validateField(name, nameError, '請輸入姓名')) {
-                isValid = false;
-            }
-
-            // Validate phone
-            if (!phone.value.trim()) {
-                phoneError.textContent = '請輸入電話號碼';
-                isValid = false;
-            } else if (!validatePhone(phone.value)) {
-                phoneError.textContent = '請輸入有效的電話號碼';
-                isValid = false;
-            } else {
-                phoneError.textContent = '';
-            }
-
-            // Validate email
-            if (!email.value.trim()) {
-                emailError.textContent = '請輸入Email';
-                isValid = false;
-            } else if (!validateEmail(email.value)) {
-                emailError.textContent = '請輸入有效的Email格式';
-                isValid = false;
-            } else {
-                emailError.textContent = '';
-            }
-
-            // Validate message
-            if (!validateField(message, messageError, '請輸入需求內容')) {
-                isValid = false;
-            }
-
-            if (isValid) {
-                // Show success modal
-                modal.style.display = 'block';
-                
-                // Reset form
-                contactForm.reset();
-                
-                // Auto close modal after 3 seconds
-                setTimeout(() => {
-                    modal.style.display = 'none';
-                }, 3000);
-            }
-        });
-
-        // Close modal
-        closeModal.addEventListener('click', () => {
-            modal.style.display = 'none';
-        });
-
-        window.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                modal.style.display = 'none';
-            }
-        });
-
-        // Scroll Animation
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Navbar scroll effect
-        window.addEventListener('scroll', () => {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 100) {
-                navbar.style.background = 'rgba(26, 26, 26, 0.95)';
-            } else {
-                navbar.style.background = 'var(--glass-bg)';
-            }
-        });
-    </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9669a88ce5c7a9d1',t:'MTc1Mzc2MTA5Mi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
-</html>
