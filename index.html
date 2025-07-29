@@ -148,7 +148,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: var(--primary-gradient);
+            background: var(--primary-gradient); /* 改回主要漸變色，與導航列和卡片顏色協調 */
             position: relative;
             overflow: hidden;
             padding-top: 80px; /* 避免內容被導航欄遮擋 */
@@ -162,13 +162,14 @@
             left: 0;
             right: 0;
             bottom: 0;
+            /* 使用更柔和的背景紋理 */
             background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
             z-index: 1; /* 在內容下方，但仍在 hero 元素內 */
         }
 
         .hero-content {
             text-align: center;
-            color: white;
+            color: white; /* 確保文字顏色與新背景協調 */
             z-index: 2; /* 確保內容在背景上方 */
             position: relative;
             padding: 20px;
@@ -198,9 +199,9 @@
         }
 
         .feature-card {
-            background: var(--glass-bg);
+            background: var(--glass-bg); /* 改回 var(--glass-bg) 以保持一致的玻璃感 */
             backdrop-filter: blur(10px);
-            border: 1px solid var(--glass-border);
+            border: 1px solid var(--glass-border); /* 改回 var(--glass-border) */
             border-radius: 20px;
             padding: 2rem;
             text-align: center;
@@ -210,7 +211,8 @@
 
         .feature-card:hover {
             transform: translateY(-10px);
-            box-shadow: var(--shadow);
+            box-shadow: var(--shadow); /* 改回 var(--shadow) */
+            background: rgba(0, 0, 0, 0.35); /* 輕微變暗以示互動 */
         }
 
         .feature-icon {
@@ -610,7 +612,7 @@
 
         /* --- 彈出視窗 (Modal) --- */
         .modal {
-            display: none; /* 預設隱藏 */
+            /* 從 display: none; 改為 opacity/visibility 搭配 class */
             position: fixed;
             z-index: 2000;
             left: 0;
@@ -637,7 +639,7 @@
 
         .modal-content {
             background: var(--bg-primary);
-            margin: 15% auto; /* 移除 auto，因為 flexbox 會居中 */
+            /* 移除 margin: 15% auto; 改為由 flexbox 居中 */
             padding: 2.5rem; /* 增加內邊距 (從 2rem 改為 2.5rem) */
             border-radius: 20px;
             width: 90%;
@@ -1067,7 +1069,7 @@
                     </div>
                     <div class="map-container">
                         <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3613.565863412574!2d121.4880572765502!3d25.0815467389868!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a8c176ec5d33%3A0xfee61682b71b0421!2zMjQx5paw5YyX5biC5LiJ6YeN5Y2A5Lit5q2j5YyX6LevMzMx5be3MTDlvIQ06Jmf!5e0!3m2!1szh-TW!2stw!4v1716358352516!5m2!1szh-TW!2stw"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.331206778401!2d121.49397627581566!3d25.0601334777599!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a8c176ec5d33%3A0xfee61682b71b0421!2zMjQx5paw5YyX5biC5LiJ6YeN5Y2A5Lit5q2j5YyX6LevMzMx5be3MTDlvIQ06Jmf!5e0!3m2!1szh-TW!2stw!4v1717550000000!5m2!1szh-TW!2stw"
                             width="100%" 
                             height="100%" 
                             style="border:0;" 
@@ -1090,6 +1092,12 @@
             <p id="modalDescription">感謝您的詢問，我們將盡快與您聯繫。</p>
         </div>
     </div>
+
+    <footer class="section" style="padding: 2rem 0; background: var(--bg-primary); text-align: center; color: var(--text-secondary);">
+        <div class="container">
+            <p>&copy; 2025 東南銘版有限公司. All Rights Reserved.</p>
+        </div>
+    </footer>
 
     <script>
         // 抓取 DOM 元素
